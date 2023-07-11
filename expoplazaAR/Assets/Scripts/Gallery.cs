@@ -10,7 +10,6 @@ public class Gallery : MonoBehaviour
     List<string> images = new List<string>();
     int currentImageIndex = 0;
     public RawImage rawImage;
-    private Texture2D imageTexture = new Texture2D(1, 1);
     
     public UnityEngine.UI.Button button2;
     

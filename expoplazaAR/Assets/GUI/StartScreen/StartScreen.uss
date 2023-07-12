@@ -41,6 +41,8 @@
     flex-grow: 1;
     background-color: rgba(255, 0, 0, 0);
     max-width: 50%;
+    flex-shrink: 1;
+    flex-basis: 50%;
 }
 
 .text-field {
@@ -82,6 +84,20 @@
     border-bottom-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    -unity-background-image-tint-color: white;
+}
+
+.toggle .unity-toggle__checkmark {
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgb(1, 208, 255);
+    border-right-color: rgb(1, 208, 255);
+    border-top-color: rgb(1, 208, 255);
+    border-bottom-color: rgb(1, 208, 255);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -unity-background-image-tint-color: white;
 }
 
 .text-field .unity-base-popup-field__arrow {

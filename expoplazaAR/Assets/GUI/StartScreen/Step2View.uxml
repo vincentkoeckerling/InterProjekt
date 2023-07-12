@@ -4,7 +4,7 @@
         <ui:VisualElement class="container" style="flex-grow: 1;">
             <ui:Label tabindex="-1" text="AR Phishing" display-tooltip-when-elided="true" class="title" />
             <ui:ScrollView horizontal-scroller-visibility="Hidden" name="ScrollView" style="flex-grow: 1;">
-                <ui:Label tabindex="-1" text="Bevor es losgeht benötigen wir noch ein paar Informationen von dir. Fülle die Felder unten aus um das Spiel zu starten" display-tooltip-when-elided="true" class="text" />
+                <ui:Label tabindex="-1" text="Bevor es losgeht benötigen wir noch ein paar Informationen von dir. Fülle die Felder unten aus um das Spiel zu starten. Diese Informationen helfen uns dein Spielerlebniss zu verbessern und genau auf dich zuzuschneiden." display-tooltip-when-elided="true" class="text" />
                 <ui:VisualElement name="form" style="background-color: rgba(0, 0, 0, 0); margin-top: 28px;">
                     <ui:VisualElement name="VisualElement" class="row">
                         <ui:VisualElement class="col">
@@ -16,7 +16,7 @@
                     </ui:VisualElement>
                     <ui:VisualElement name="VisualElement" class="row">
                         <ui:VisualElement name="VisualElement" class="col">
-                            <ui:DropdownField label="Geschlecht" index="-1" choices="Männlich,Weiblich,Divers,---" name="gender" class="text-field" style="margin-left: 4px; margin-right: 4px; margin-bottom: 2px; margin-top: 2px; height: 100%; padding-bottom: 0;" />
+                            <ui:DropdownField label="Geschlecht" index="-1" choices="Männlich,Weiblich,Divers,Keine Angabe" name="gender" class="text-field" style="margin-left: 4px; margin-right: 4px; margin-bottom: 2px; margin-top: 2px; height: 100%; padding-bottom: 0;" />
                         </ui:VisualElement>
                         <ui:VisualElement class="col">
                             <ui:TextField picking-mode="Ignore" label="E-Mail" name="email" keyboard-type="EmailAddress" class="text-field" />
@@ -28,7 +28,7 @@
                         </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement name="VisualElement" class="row">
-                        <ui:VisualElement name="VisualElement" class="col" style="width: 25%; flex-grow: 0;">
+                        <ui:VisualElement name="VisualElement" class="col" style="width: 25%; flex-grow: 0; flex-basis: auto;">
                             <ui:TextField picking-mode="Ignore" label="Postleitzahl" name="zipCode" keyboard-type="DecimalPad" class="text-field" />
                         </ui:VisualElement>
                         <ui:VisualElement name="VisualElement" class="col" style="max-width: none;">

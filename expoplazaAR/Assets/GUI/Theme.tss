@@ -1,0 +1,19 @@
+@import url("/Assets/UI Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss");
+
+VisualElement {
+	--blue-1: #01d0ff;
+	--blue-2: #0083B0;
+	--blue-3: #009ec7;
+}
+
+.unity-button {
+	border-radius: 16px;
+	padding: 16px 12px;
+	color: white;
+	background-image: url("/Assets/GUI/gradient.png");
+	border-top-color: var(--blue-2);
+	border-bottom-color: var(--blue-1);
+	border-right-color: var(--blue-3);
+	border-left-color: var(--blue-3);
+	border-width: 5px;
+}

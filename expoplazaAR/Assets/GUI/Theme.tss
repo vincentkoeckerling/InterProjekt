@@ -25,18 +25,21 @@ VisualElement {
 	-unity-font-definition: none;
 }
 
-.unity-button:active {
-	border-top-color: var(--blue-2);
-	border-bottom-color: var(--blue-1);
-	border-right-color: var(--blue-3);
-	border-left-color: var(--blue-3);
-	-unity-background-image-tint-color: rgb(205, 205, 205);
-}
-
+.unity-button:active,
+.unity-button:disabled,
 .unity-button:hover,
 .unity-button:focus {
 	border-top-color: var(--blue-2);
 	border-bottom-color: var(--blue-1);
 	border-right-color: var(--blue-3);
 	border-left-color: var(--blue-3);
+	
+}
+
+.unity-button:active {
+	-unity-background-image-tint-color: rgb(205, 205, 205);
+}
+
+.unity-button:disabled {
+	opacity: 0.5;
 }

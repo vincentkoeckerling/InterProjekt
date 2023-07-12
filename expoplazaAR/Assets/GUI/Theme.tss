@@ -4,6 +4,11 @@ VisualElement {
 	--blue-1: #01d0ff;
 	--blue-2: #0083B0;
 	--blue-3: #009ec7;
+
+	--font: url("/Assets/Fonts/Kaph/Kaph-Regular.otf");
+
+	-unity-font: url("/Assets/Fonts/Kaph/ComicNeue-Regular.ttf");
+	-unity-font-definition: none;
 }
 
 .unity-button {
@@ -16,4 +21,22 @@ VisualElement {
 	border-right-color: var(--blue-3);
 	border-left-color: var(--blue-3);
 	border-width: 5px;
+	-unity-font: var(--font);
+	-unity-font-definition: none;
+}
+
+.unity-button:active {
+	border-top-color: var(--blue-2);
+	border-bottom-color: var(--blue-1);
+	border-right-color: var(--blue-3);
+	border-left-color: var(--blue-3);
+	-unity-background-image-tint-color: rgb(205, 205, 205);
+}
+
+.unity-button:hover,
+.unity-button:focus {
+	border-top-color: var(--blue-2);
+	border-bottom-color: var(--blue-1);
+	border-right-color: var(--blue-3);
+	border-left-color: var(--blue-3);
 }

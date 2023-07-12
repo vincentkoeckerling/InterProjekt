@@ -22,9 +22,14 @@ public class StartScreenPresenter : MonoBehaviour
 		step2 = root.Q("step2");
 		step3 = root.Q("step3");
 
-		step1.Q<Button>("button1").clicked += onStep1Click;
-		step2.Q<Button>("button2").clicked += onStep2Click;
-		step3.Q<Button>("button3").clicked += onStep3Click;
+		step1.Q<Button>("button").clicked += onStep1Click;
+		step2.Q<Button>("button").clicked += onStep2Click;
+
+		var button3 = step3.Q<Button>("button");
+		button3.clicked += onStep3Click;
+		button3.SetEnabled(false);
+
+		step3.Q<Toggle>("toggle").RegisterValueChangedCallback(e => button3.SetEnabled(e.newValue));
 	}
 
 	private void onStep1Click()

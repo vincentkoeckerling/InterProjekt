@@ -3,7 +3,7 @@
     <ui:VisualElement picking-mode="Ignore" name="VisualElement" class="root">
         <ui:VisualElement name="VisualElement" class="container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: center;">
             <ui:Label tabindex="-1" text="AR Phishing" display-tooltip-when-elided="true" name="Label" class="title" />
-            <ui:Button text="Loslegen" display-tooltip-when-elided="true" name="button1" style="margin-top: 32px; font-size: 18px;" />
+            <ui:Button text="Loslegen" display-tooltip-when-elided="true" name="button" style="margin-top: 32px; font-size: 18px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

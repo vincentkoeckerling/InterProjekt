@@ -8,35 +8,35 @@
                 <ui:VisualElement name="form" style="background-color: rgba(0, 0, 0, 0); margin-top: 32px;">
                     <ui:VisualElement name="VisualElement" class="row">
                         <ui:VisualElement class="col">
-                            <ui:TextField picking-mode="Ignore" label="Vorname" name="TextField" class="text-field" />
+                            <ui:TextField picking-mode="Ignore" label="Vorname" name="firstName" class="text-field" />
                         </ui:VisualElement>
                         <ui:VisualElement class="col">
-                            <ui:TextField picking-mode="Ignore" label="Nachname" name="TextField" class="text-field" />
+                            <ui:TextField picking-mode="Ignore" label="Nachname" name="lastName" class="text-field" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement name="VisualElement" class="row">
                         <ui:VisualElement name="VisualElement" class="col">
-                            <ui:DropdownField label="Geschlecht" index="-1" choices="Männlich, Weiblich, Divers, Keine Angabe" name="DropdownField" class="text-field" style="margin-left: 2px; margin-right: 4px;" />
+                            <ui:DropdownField label="Geschlecht" index="-1" choices="Männlich, Weiblich, Divers, Keine Angabe" name="gender" class="text-field" style="margin-left: 2px; margin-right: 4px;" />
                         </ui:VisualElement>
                         <ui:VisualElement class="col">
-                            <ui:TextField picking-mode="Ignore" label="E-Mail" name="TextField" keyboard-type="EmailAddress" class="text-field" />
+                            <ui:TextField picking-mode="Ignore" label="E-Mail" name="email" keyboard-type="EmailAddress" class="text-field" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement name="VisualElement" class="row">
                         <ui:VisualElement class="col">
-                            <ui:TextField picking-mode="Ignore" label="Straße und Hausnr." name="TextField" keyboard-type="Default" class="text-field" />
+                            <ui:TextField picking-mode="Ignore" label="Straße und Hausnr." name="street" keyboard-type="Default" class="text-field" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement name="VisualElement" class="row">
                         <ui:VisualElement name="VisualElement" class="col" style="width: 25%; flex-grow: 0;">
-                            <ui:TextField picking-mode="Ignore" label="Postleitzahl" name="TextField" keyboard-type="DecimalPad" class="text-field" />
+                            <ui:TextField picking-mode="Ignore" label="Postleitzahl" name="zipCode" keyboard-type="DecimalPad" class="text-field" />
                         </ui:VisualElement>
                         <ui:VisualElement name="VisualElement" class="col">
-                            <ui:TextField picking-mode="Ignore" label="Stadt" name="TextField" keyboard-type="DecimalPad" class="text-field" />
+                            <ui:TextField picking-mode="Ignore" label="Stadt" name="City" keyboard-type="DecimalPad" class="text-field" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:Button text="Weiter" display-tooltip-when-elided="true" name="button2" style="margin-top: 32px; margin-bottom: 32px;" />
+                <ui:Button text="Weiter" display-tooltip-when-elided="true" name="button" style="margin-top: 32px; margin-bottom: 32px;" />
             </ui:ScrollView>
         </ui:VisualElement>
     </ui:VisualElement>

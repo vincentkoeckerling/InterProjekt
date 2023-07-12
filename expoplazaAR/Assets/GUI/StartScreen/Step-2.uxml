@@ -36,7 +36,7 @@
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:Button text="Weiter" display-tooltip-when-elided="true" name="Button" style="margin-top: 32px; margin-bottom: 32px;" />
+                <ui:Button text="Weiter" display-tooltip-when-elided="true" name="button2" style="margin-top: 32px; margin-bottom: 32px;" />
             </ui:ScrollView>
         </ui:VisualElement>
     </ui:VisualElement>

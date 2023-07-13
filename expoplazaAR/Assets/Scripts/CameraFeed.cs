@@ -16,8 +16,20 @@ public class CameraFeed : MonoBehaviour
 	{
 		Debug.Log("CameraFeed initialzing...");
 		button2.onClick.AddListener(Image);
+
+		string frontCamName = "";
 		
-		webCamTexture = new WebCamTexture();
+		WebCamDevice[] webCamDevices = WebCamTexture.devices;
+		foreach(WebCamDevice camDevice in webCamDevices){
+			if (camDevice.isFrontFacing)
+			{
+				frontCamName = camDevice.name;
+			}
+		}
+		Debug.Log("Identified front camera: " + frontCamName);
+		
+		
+		webCamTexture = new WebCamTexture(frontCamName);
 		rawImage.texture = webCamTexture; //Add Mesh Renderer to the GameObject to which this script is attached to
 		webCamTexture.Play();
 	}

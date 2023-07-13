@@ -7,7 +7,7 @@ using Button = UnityEngine.UIElements.Button;
 
 public class Gallery : MonoBehaviour
 {
-    List<string> images = new List<string>();
+    List<string> images = new();
     int currentImageIndex = 0;
     public RawImage rawImage;
     

@@ -1595,7 +1595,8 @@ PrefabInstance:
       value: atrium
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: 0af789aaf6c850146aed454d1cd7a3a8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0af789aaf6c850146aed454d1cd7a3a8, type: 3}

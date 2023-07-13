@@ -1,8 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="Step1View" src="project://database/Assets/GUI/StartScreen/Step1View.uxml?fileID=9197481963319205126&amp;guid=5e347ddf5253b40428d988f1a45321e6&amp;type=3#Step1View" />
-    <ui:Template name="Step2View" src="project://database/Assets/GUI/StartScreen/Step2View.uxml?fileID=9197481963319205126&amp;guid=bef50e2533e5746f1bb674df185f269a&amp;type=3#Step2View" />
-    <ui:Template name="Step3View" src="project://database/Assets/GUI/StartScreen/Step3View.uxml?fileID=9197481963319205126&amp;guid=1642fa434d8e74f76b7c0cd29deb75e7&amp;type=3#Step3View" />
+    <ui:Template name="Step2View" src="project://database/Assets/GUI/StartScreen/Step2View.uxml?fileID=9197481963319205126&amp;guid=1e9060afe8fe44f1cbe1a3b7d4c959a2&amp;type=3#Step2View" />
+    <ui:Template name="Step3View" src="project://database/Assets/GUI/StartScreen/Step3View.uxml?fileID=9197481963319205126&amp;guid=bef50e2533e5746f1bb674df185f269a&amp;type=3#Step3View" />
+    <ui:Template name="Step4View" src="project://database/Assets/GUI/StartScreen/Step4View.uxml?fileID=9197481963319205126&amp;guid=0d0f7c97bcbd0480cb9a1bbe69efc45f&amp;type=3#Step4View" />
+    <ui:Template name="Step5View" src="project://database/Assets/GUI/StartScreen/Step5View.uxml?fileID=9197481963319205126&amp;guid=1642fa434d8e74f76b7c0cd29deb75e7&amp;type=3#Step5View" />
     <ui:Instance template="Step1View" name="step1" style="flex-grow: 1;" />
     <ui:Instance template="Step2View" name="step2" style="flex-grow: 1; display: none;" />
     <ui:Instance template="Step3View" name="step3" style="flex-grow: 1; display: none;" />
+    <ui:Instance template="Step4View" name="step4" style="flex-grow: 1; display: none;" />
+    <ui:Instance template="Step5View" name="step5" style="flex-grow: 1; display: none;" />
 </ui:UXML>

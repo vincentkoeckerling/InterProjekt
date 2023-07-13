@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 592144086}
   - component: {fileID: 592144085}
   - component: {fileID: 592144084}
+  - component: {fileID: 592144088}
   - component: {fileID: 592144087}
   m_Layer: 0
   m_Name: StartScreen
@@ -197,6 +198,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03a860382ca8147ef82615e9a8b3961a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &592144088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592144083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecf8803cf35454094bf417c6facb380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2066018280

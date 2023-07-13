@@ -6,35 +6,28 @@ using UnityEngine.UIElements;
 public class Step2Presenter : MonoBehaviour
 {
 	private VisualElement step2;
-
-	private TextField firstNameTextField;
-	private TextField lastNameTextField;
-	private DropdownField genderDropdownField;
+	
+	private TextField usernameTextField;
 	private TextField emailTextField;
-	private TextField streetTextField;
-	private TextField zipCodeTextField;
-	private TextField cityTextField;
+	private TextField passwordTextField;
+	private TextField confirmPasswordTextField;
 
 	private Button button;
 
 	private void OnEnable()
 	{
 		step2 = GetComponent<UIDocument>().rootVisualElement.Q("step2");
-
-		firstNameTextField = step2.Q<TextField>("firstName");
-		lastNameTextField = step2.Q<TextField>("lastName");
-		genderDropdownField = step2.Q<DropdownField>("gender");
+		
+		usernameTextField = step2.Q<TextField>("username");
 		emailTextField = step2.Q<TextField>("email");
-		streetTextField = step2.Q<TextField>("street");
-		zipCodeTextField = step2.Q<TextField>("zipCode");
-		cityTextField = step2.Q<TextField>("city");
+		passwordTextField = step2.Q<TextField>("password");
+		confirmPasswordTextField = step2.Q<TextField>("confirmPassword");
 
 		button = step2.Q<Button>("button");
 
 		UpdateState();
-
+		
 		step2.RegisterCallback<InputEvent>((_) => UpdateState());
-		genderDropdownField.RegisterValueChangedCallback((_) => UpdateState());
 	}
 
 	private void UpdateState()
@@ -45,6 +38,10 @@ public class Step2Presenter : MonoBehaviour
 	private bool IsFilledOut()
 	{
 		var allFields = step2.Query<BaseField<string>>(className: "unity-base-field").ToList();
-		return allFields.TrueForAll((field) => field.value != null && field.value != "");
+		
+		return 
+			allFields.TrueForAll((field) => !string.IsNullOrEmpty(field.value))
+			&&
+			passwordTextField.value.Equals(confirmPasswordTextField.value);
 	}
 }

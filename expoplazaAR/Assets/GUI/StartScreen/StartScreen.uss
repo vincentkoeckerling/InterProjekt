@@ -105,6 +105,21 @@
     -unity-background-image-tint-color: rgb(255, 255, 255);
 }
 
+.unity-foldout .unity-toggle:focus,
+.unity-foldout .unity-toggle:active,
+.unity-foldout .unity-toggle:focus Label,
+.unity-foldout .unity-toggle:active Label {
+    color: white !important;
+}
+
+.unity-foldout__checkmark {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
 .text-field:focus Label {
     color: rgb(255, 255, 255);
+}
+
+.toggle--mb {
+    margin-bottom: 12px;
 }

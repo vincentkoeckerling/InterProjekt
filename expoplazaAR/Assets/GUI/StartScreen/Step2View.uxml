@@ -28,7 +28,7 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:ScrollView>
-            <ui:Button text="Weiter" display-tooltip-when-elided="true" name="button" style="margin-bottom: 32px; margin-top: 24px;" />
+            <ui:Button text="Weiter" display-tooltip-when-elided="true" name="button" class="sound" style="margin-bottom: 32px; margin-top: 24px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

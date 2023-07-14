@@ -1,3 +1,4 @@
+using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -5,6 +6,8 @@ namespace GUI
 {
 	public class Step3Presenter : MonoBehaviour
 	{
+		[SerializeField] private UserInfo userInfo;
+		
 		private VisualElement step3;
 
 		private TextField firstNameTextField;
@@ -30,7 +33,8 @@ namespace GUI
 			cityTextField = step3.Q<TextField>("city");
 
 			button = step3.Q<Button>("button");
-
+			button.clicked += Submit;
+			
 			UpdateState();
 
 			step3.RegisterCallback<InputEvent>((_) => UpdateState());
@@ -46,6 +50,17 @@ namespace GUI
 		{
 			var allFields = step3.Query<BaseField<string>>(className: "unity-base-field").ToList();
 			return allFields.TrueForAll((field) => !string.IsNullOrEmpty(field.value));
+		}
+
+		private void Submit()
+		{
+			userInfo.firstName = firstNameTextField.value;
+			userInfo.lastName = lastNameTextField.value;
+			userInfo.gender = genderDropdownField.value;
+			userInfo.birthday = birthdayTextField.value;
+			userInfo.street = streetTextField.value;
+			userInfo.zipCode = zipCodeTextField.value;
+			userInfo.city = cityTextField.value;
 		}
 	}
 }

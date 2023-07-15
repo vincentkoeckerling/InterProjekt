@@ -33,7 +33,9 @@ public class Gallery : MonoBehaviour
         Texture2D loadTexture = new Texture2D(1,1); //mock size 1x1
         loadTexture.LoadImage(imageBytes);
         
-        rawImage.texture = loadTexture;
+        if(rawImage != null)
+            rawImage.texture = loadTexture;
+        
         meshRenderer.material.mainTexture = loadTexture;
     }
 

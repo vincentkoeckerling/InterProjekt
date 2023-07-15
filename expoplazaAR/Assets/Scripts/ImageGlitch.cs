@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class ImageGlitch : MonoBehaviour
 {
+    public Material glitchMaterial;  // Das Material, das die Flicker-Textur verwendet
+    
     public float flickerDuration = 0.3f;  // Die Dauer, für die die Flicker-Textur angezeigt wird
 
     private Renderer _fishRenderer;
-    private Texture2D _originalTexture;
+    private Material _originalMaterial;
     private bool _isFlickering;
 
     private void Start()
     {
         _fishRenderer = GetComponent<Renderer>();
-        _originalTexture = _fishRenderer.material.mainTexture as Texture2D;
+        
+        Material material = _fishRenderer.material;
+        _originalMaterial = material;
+        
     }
 
     private void Update()
@@ -32,18 +37,19 @@ public class ImageGlitch : MonoBehaviour
         Texture2D loadTexture = new Texture2D(1,1); //
         loadTexture.LoadImage(imageBytes);
 
-        
+        glitchMaterial.SetTexture("_PlayerImage", loadTexture);
+
         _isFlickering = true;
 
         // Zeige die Flicker-Textur an
-        Material material = _fishRenderer.material;
-        material.mainTexture = loadTexture;
+        _fishRenderer.material = glitchMaterial;
+        glitchMaterial.mainTexture = loadTexture;
 
         // Warte für die angegebene Dauer
         yield return new WaitForSeconds(flickerDuration);
 
         // Setze die ursprüngliche Textur wieder ein
-        material.mainTexture = _originalTexture;
+        _fishRenderer.material = _originalMaterial;
         
         yield return new WaitForSeconds(2);
 

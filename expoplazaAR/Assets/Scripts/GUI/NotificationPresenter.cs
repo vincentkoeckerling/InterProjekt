@@ -23,16 +23,6 @@ namespace GUI
             textLabel = notification.Q<Label>("text");
 
             notification.Q<Button>("dismissButton").clicked += Hide;
-
-            StartCoroutine(Test());
-        }
-
-        private IEnumerator Test()
-        {
-            yield return new WaitForSeconds(3);
-            ShowNotification("Tips", "Ich fürchte hier gibt es keine Fische mehr, du Hai!");
-            yield return new WaitForSeconds(3);
-            ShowNotification("Tips 2", "Es gibt wirklich keine Fische mehr Bastard");
         }
 
         public void ShowNotification(string title, string text, float dismissAfter = -1)

@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/GUI/Popup/Popup.uss?fileID=7433441132597879392&amp;guid=7cd2072d3e7e9470d983cb8d07b94010&amp;type=3#Popup" />
+    <ui:VisualElement name="modal" class="modal--hidden" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: center; align-items: center;">
+        <ui:VisualElement name="VisualElement" class="backdrop" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.65); position: absolute; left: 0; top: 0; right: 0; bottom: 0; transition-property: opacity; transition-duration: 0.15s; transition-timing-function: ease-in;" />
+        <ui:VisualElement name="VisualElement" class="card" style="flex-grow: 0; transition-duration: 0.2s; transition-timing-function: ease-in; transition-delay: 0.1s;">
+            <ui:Label tabindex="-1" text="Titel" display-tooltip-when-elided="true" name="title" class="title" />
+            <ui:Label tabindex="-1" text="Spielst du gerne Videospiele?" display-tooltip-when-elided="true" name="text" />
+            <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: flex-start; justify-content: space-between; margin-top: 16px;">
+                <ui:Button text="Ja" display-tooltip-when-elided="true" class="button" style="margin-right: 16px;" />
+                <ui:Button text="Nein" display-tooltip-when-elided="true" class="button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

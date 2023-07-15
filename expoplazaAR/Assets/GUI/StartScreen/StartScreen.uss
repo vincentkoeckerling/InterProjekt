@@ -1,0 +1,125 @@
+.container {
+    align-self: center;
+    max-width: 600px;
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+}
+
+.title {
+    width: 100%;
+    -unity-text-align: upper-center;
+    font-size: 56px;
+    padding-top: 48px;
+    padding-bottom: 32px;
+    -unity-font: var(--font);
+    color: rgb(255, 255, 255);
+}
+
+.text {
+    max-width: 500px;
+    white-space: normal;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
+.row {
+    flex-direction: row;
+    margin-left: -8px;
+    margin-right: -8px;
+    flex-grow: 0;
+    margin-bottom: 8px;
+    background-color: rgba(0, 255, 12, 0);
+}
+
+.col {
+    flex-direction: column;
+    margin-left: 8px;
+    margin-right: 8px;
+    flex-grow: 1;
+    background-color: rgba(255, 0, 0, 0);
+    max-width: 50%;
+    flex-shrink: 1;
+    flex-basis: 50%;
+}
+
+.text-field {
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    height: 100%;
+}
+
+.root {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    background-image: url('project://database/Assets/GUI/background.png?fileID=2800000&guid=edbc1a3863d394fcba248e05e5ef07e0&type=3#background');
+}
+
+.toggle {
+    flex-direction: row-reverse;
+    white-space: normal;
+    font-size: 12px;
+}
+
+.toggle Label {
+    white-space: normal;
+    margin-left: 0;
+    padding-left: 16px;
+}
+
+.text-field .unity-base-field__input {
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgb(1, 208, 255);
+    border-right-color: rgb(1, 208, 255);
+    border-top-color: rgb(1, 208, 255);
+    border-bottom-color: rgb(1, 208, 255);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -unity-background-image-tint-color: white;
+}
+
+.toggle .unity-toggle__checkmark {
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgb(1, 208, 255);
+    border-right-color: rgb(1, 208, 255);
+    border-top-color: rgb(1, 208, 255);
+    border-bottom-color: rgb(1, 208, 255);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -unity-background-image-tint-color: white;
+}
+
+.text-field .unity-base-popup-field__arrow {
+    background-image: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=8300712400058098730&guid=a6c4974d78fa541898cfa36e717f89b3&type=3#dropdown-arrow@2x');
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.unity-foldout .unity-toggle:focus,
+.unity-foldout .unity-toggle:active,
+.unity-foldout .unity-toggle:focus Label,
+.unity-foldout .unity-toggle:active Label {
+    color: white !important;
+}
+
+.unity-foldout__checkmark {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.text-field:focus Label {
+    color: rgb(255, 255, 255);
+}
+
+.toggle--mb {
+    margin-bottom: 12px;
+}

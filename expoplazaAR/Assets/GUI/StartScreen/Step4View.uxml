@@ -1,0 +1,32 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/GUI/StartScreen/StartScreen.uss?fileID=7433441132597879392&amp;guid=7da7d290ad23c493e809ff3d1cec8fe5&amp;type=3#StartScreen" />
+    <ui:VisualElement picking-mode="Ignore" name="VisualElement" class="root">
+        <ui:VisualElement class="container" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="AR Phishing" display-tooltip-when-elided="true" class="title" />
+            <ui:Label tabindex="-1" text="Fast geschaftt! Hast du irgendwelche körperlichen oder psychischen Einschränkungen? Deine Angaben helfen es uns deine Spielerfahrung so reibungslos wie möglich zu gestalten. Diese Daten werden mit höchster Vertraulichkeit behandelt. Deine Privatspähre ist uns wichtig!" display-tooltip-when-elided="true" enable-rich-text="true" name="Label" class="text" style="-unity-font-style: bold;" />
+            <ui:Foldout text="Hier auswählen" focusable="false" name="Foldout" value="true" style="color: rgb(255, 255, 255); font-size: 14px; -unity-font-style: bold; margin-top: 16px;">
+                <ui:ScrollView horizontal-scroller-visibility="Hidden" name="ScrollView">
+                    <ui:Toggle name="Toggle" text="Brille" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle name="Toggle" text="Kontaktlinsen" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle name="Toggle" text="Kurzsichtig" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle name="Toggle" text="Weitsichtig" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle name="Toggle" text="Rollstuhl" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle name="Toggle" text="Prothese" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle name="Toggle" text="Schönheitsoperation" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle name="Toggle" text="Haarausfall" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle name="Toggle" text="Depressionen" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle text="ADHS" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle text="Autismus" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle text="Schwangerschaft" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle text="Menopause" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle text="Parkinson" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle text="Epilepsie" value="false" name="Toggle" class="toggle toggle--mb sound" />
+                    <ui:Toggle text="Übergewicht" value="false" class="toggle toggle--mb sound" />
+                    <ui:Toggle text="Untergewicht" value="false" class="toggle toggle--mb sound" />
+                </ui:ScrollView>
+            </ui:Foldout>
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
+            <ui:Button text="Weiter" display-tooltip-when-elided="true" name="button" class="sound" style="margin-bottom: 32px; margin-top: 32px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

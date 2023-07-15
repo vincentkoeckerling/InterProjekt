@@ -1,0 +1,34 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/GUI/StartScreen/StartScreen.uss?fileID=7433441132597879392&amp;guid=7da7d290ad23c493e809ff3d1cec8fe5&amp;type=3#StartScreen" />
+    <ui:VisualElement picking-mode="Ignore" name="VisualElement" class="root">
+        <ui:VisualElement class="container" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="AR Phishing" display-tooltip-when-elided="true" class="title" />
+            <ui:ScrollView horizontal-scroller-visibility="Hidden" name="ScrollView" style="flex-grow: 1; padding-bottom: 24px;">
+                <ui:Label tabindex="-1" text="Lege einen Nutzeraccount an, um das Spiel zu spielen" display-tooltip-when-elided="true" enable-rich-text="true" class="text" style="-unity-font-style: bold;" />
+                <ui:VisualElement name="form" style="background-color: rgba(0, 0, 0, 0); margin-top: 28px;">
+                    <ui:VisualElement name="VisualElement" class="row" style="justify-content: center;">
+                        <ui:VisualElement class="col" style="max-width: 66%;">
+                            <ui:TextField picking-mode="Ignore" label="Benutzername" name="username" class="text-field" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="VisualElement" class="row" style="justify-content: center;">
+                        <ui:VisualElement class="col" style="max-width: 66%;">
+                            <ui:TextField picking-mode="Ignore" label="E-Mail" name="email" keyboard-type="EmailAddress" class="text-field" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="VisualElement" class="row" style="justify-content: center;">
+                        <ui:VisualElement class="col" style="max-width: 66%;">
+                            <ui:TextField picking-mode="Ignore" label="Passwort" name="password" keyboard-type="Default" password="true" class="text-field" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="VisualElement" class="row" style="justify-content: center;">
+                        <ui:VisualElement class="col" style="max-width: 66%;">
+                            <ui:TextField picking-mode="Ignore" label="Passwort wiederholen" name="confirmPassword" keyboard-type="Default" password="true" class="text-field" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:ScrollView>
+            <ui:Button text="Weiter" display-tooltip-when-elided="true" name="button" class="sound" style="margin-bottom: 32px; margin-top: 24px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,43 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/GUI/StartScreen/StartScreen.uss?fileID=7433441132597879392&amp;guid=7da7d290ad23c493e809ff3d1cec8fe5&amp;type=3#StartScreen" />
+    <ui:VisualElement picking-mode="Ignore" name="VisualElement" class="root">
+        <ui:VisualElement class="container" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="AR Phishing" display-tooltip-when-elided="true" class="title" />
+            <ui:ScrollView horizontal-scroller-visibility="Hidden" name="ScrollView" style="flex-grow: 1;">
+                <ui:Label tabindex="-1" text="Bevor es losgeht benötigen wir noch ein paar Informationen von dir. Fülle die Felder unten aus um das Spiel zu starten. Diese Informationen helfen uns dein Spielerlebniss zu verbessern und genau auf dich zuzuschneiden." display-tooltip-when-elided="true" class="text" />
+                <ui:VisualElement name="form" style="background-color: rgba(0, 0, 0, 0); margin-top: 28px;">
+                    <ui:VisualElement name="VisualElement" class="row">
+                        <ui:VisualElement class="col">
+                            <ui:TextField picking-mode="Ignore" label="Vorname" name="firstName" class="text-field" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="col">
+                            <ui:TextField picking-mode="Ignore" label="Nachname" name="lastName" class="text-field" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="VisualElement" class="row">
+                        <ui:VisualElement name="VisualElement" class="col">
+                            <ui:DropdownField label="Geschlecht" index="-1" choices="Männlich,Weiblich,Divers,Keine Angabe" name="gender" class="text-field" style="margin-left: 4px; margin-right: 4px; margin-bottom: 2px; margin-top: 2px; height: 100%; padding-bottom: 0;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="col">
+                            <ui:TextField picking-mode="Ignore" label="Geburtsdatum" name="birthday" keyboard-type="Default" class="text-field" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="VisualElement" class="row">
+                        <ui:VisualElement class="col" style="max-width: none;">
+                            <ui:TextField picking-mode="Ignore" label="Straße und Hausnr." name="street" keyboard-type="Default" class="text-field" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="VisualElement" class="row">
+                        <ui:VisualElement name="VisualElement" class="col" style="width: 25%; flex-grow: 0; flex-basis: auto;">
+                            <ui:TextField picking-mode="Ignore" label="Postleitzahl" name="zipCode" keyboard-type="DecimalPad" class="text-field" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="VisualElement" class="col" style="max-width: none;">
+                            <ui:TextField picking-mode="Ignore" label="Stadt" name="city" keyboard-type="DecimalPad" class="text-field" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:ScrollView>
+            <ui:Button text="Weiter" display-tooltip-when-elided="true" name="button" class="sound" style="margin-top: 32px; margin-bottom: 32px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

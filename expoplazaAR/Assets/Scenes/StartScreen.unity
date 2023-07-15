@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e02650edd1c4e6abe21bd557fdf2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationSceneName: DoubleCamera
+  destinationSceneName: AR
 --- !u!114 &592144085
 MonoBehaviour:
   m_ObjectHideFlags: 0

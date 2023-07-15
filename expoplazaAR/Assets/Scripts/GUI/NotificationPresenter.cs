@@ -5,13 +5,12 @@ using UnityEngine.UIElements;
 
 namespace GUI
 {
-    public class PopupPresenter : MonoBehaviour
+    [RequireComponent(typeof(UIDocument))]
+    public class NotificationPresenter : MonoBehaviour
     {
-        [SerializeField] private UIDocument notificationUI;
-
         private VisualElement notification;
-        private Label title;
-        private Label text;
+        private Label titleLabel;
+        private Label textLabel;
 
         private Coroutine coroutine;
         
@@ -19,9 +18,9 @@ namespace GUI
 
         private void OnEnable()
         {
-            notification = notificationUI.rootVisualElement.Q("notification");
-            title = notification.Q<Label>("title");
-            text = notification.Q<Label>("text");
+            notification = GetComponent<UIDocument>().rootVisualElement.Q("notification");
+            titleLabel = notification.Q<Label>("title");
+            textLabel = notification.Q<Label>("text");
 
             notification.Q<Button>("dismissButton").clicked += Hide;
 
@@ -50,8 +49,8 @@ namespace GUI
                 yield return new WaitForSeconds(0.3f);
             }
 
-            this.title.text = title;
-            this.text.text = text;
+            titleLabel.text = title;
+            textLabel.text = text;
 
             Show();
             

@@ -10,7 +10,7 @@
                     <ui:Label tabindex="-1" text="Spielst du gerne Videospiele?" display-tooltip-when-elided="true" name="text" style="white-space: normal;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: flex-start; justify-content: space-between; margin-top: 16px;">
+            <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: flex-start; justify-content: center; margin-top: 16px;">
                 <ui:Button text="Ja" display-tooltip-when-elided="true" name="yesButton" class="button" style="margin-right: 16px;" />
                 <ui:Button text="Nein" display-tooltip-when-elided="true" name="noButton" class="button" />
             </ui:VisualElement>

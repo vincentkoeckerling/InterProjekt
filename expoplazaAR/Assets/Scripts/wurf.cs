@@ -18,5 +18,10 @@ public class wurf : MonoBehaviour
         {
             anim1.SetTrigger("wurf");
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            anim1.SetTrigger("catch");
+        }
     }
 }

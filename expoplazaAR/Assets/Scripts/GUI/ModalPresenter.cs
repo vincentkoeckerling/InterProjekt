@@ -8,11 +8,20 @@ namespace GUI
 	[RequireComponent(typeof(UIDocument))]
 	public class ModalPresenter : MonoBehaviour
 	{
+		[SerializeField] private AudioClip clip;
+
+		private AudioSource audioSource;
+
 		private VisualElement modal;
 		private Label titleLabel;
 		private Label textLabel;
 
 		private Action<bool> callback;
+
+		private void Start()
+		{
+			audioSource = GetComponent<AudioSource>();
+		}
 
 		private void OnEnable()
 		{
@@ -21,8 +30,8 @@ namespace GUI
 			textLabel = modal.Q<Label>("text");
 
 			modal.Query<Button>(className: "button").ForEach(btn => btn.clicked += Hide);
-            modal.Q<Button>("yesButton").clicked += () => callback(true);
-            modal.Q<Button>("noButton").clicked += () => callback(false);
+			modal.Q<Button>("yesButton").clicked += () => callback(true);
+			modal.Q<Button>("noButton").clicked += () => callback(false);
 		}
 
 		public void ShowModal(string title, string text, Action<bool> callback)
@@ -36,6 +45,9 @@ namespace GUI
 
 		private void Show()
 		{
+			audioSource.clip = clip;
+			audioSource.pitch = 1;
+			audioSource.PlayDelayed(0.3f);
 			modal.RemoveFromClassList("modal--hidden");
 		}
 

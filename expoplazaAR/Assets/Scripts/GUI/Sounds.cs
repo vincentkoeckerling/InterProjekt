@@ -4,6 +4,7 @@ using Random = UnityEngine.Random;
 
 namespace GUI
 {
+    [RequireComponent(typeof(AudioSource))]
     public class Sounds : MonoBehaviour
     {
         [SerializeField] private AudioClip clip;

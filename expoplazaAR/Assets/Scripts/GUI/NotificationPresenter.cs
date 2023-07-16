@@ -5,60 +5,72 @@ using UnityEngine.UIElements;
 
 namespace GUI
 {
-    [RequireComponent(typeof(UIDocument))]
-    public class NotificationPresenter : MonoBehaviour
-    {
-        private VisualElement notification;
-        private Label titleLabel;
-        private Label textLabel;
+	[RequireComponent(typeof(UIDocument))]
+	public class NotificationPresenter : MonoBehaviour
+	{
+		[SerializeField] private AudioClip clip;
 
-        private Coroutine coroutine;
-        
-        private bool IsNotificationShown => !notification.ClassListContains("notification-hidden");
+		private AudioSource audioSource;
 
-        private void OnEnable()
-        {
-            notification = GetComponent<UIDocument>().rootVisualElement.Q("notification");
-            titleLabel = notification.Q<Label>("title");
-            textLabel = notification.Q<Label>("text");
+		private VisualElement notification;
+		private Label titleLabel;
+		private Label textLabel;
 
-            notification.Q<Button>("dismissButton").clicked += Hide;
-        }
+		private Coroutine coroutine;
 
-        public void ShowNotification(string title, string text, float dismissAfter = -1)
-        {
-            if (coroutine != null) StopCoroutine(coroutine);
-            coroutine = StartCoroutine(ShowNotificationCoroutine(title, text, dismissAfter));
-        }
+		private bool IsNotificationShown => !notification.ClassListContains("notification-hidden");
 
-        private IEnumerator ShowNotificationCoroutine(string title, string text, float dismissAfter)
-        {
-            if (IsNotificationShown)
-            {
-                Hide();
-                yield return new WaitForSeconds(0.3f);
-            }
+		private void Start()
+		{
+			audioSource = GetComponent<AudioSource>();
+		}
 
-            titleLabel.text = title;
-            textLabel.text = text;
+		private void OnEnable()
+		{
+			notification = GetComponent<UIDocument>().rootVisualElement.Q("notification");
+			titleLabel = notification.Q<Label>("title");
+			textLabel = notification.Q<Label>("text");
 
-            Show();
-            
-            if (dismissAfter >= 0)
-            {
-                yield return new WaitForSeconds(dismissAfter);
-                Hide();
-            }
-        }
+			notification.Q<Button>("dismissButton").clicked += Hide;
+		}
 
-        private void Show()
-        {
-            notification.RemoveFromClassList("notification--hidden");
-        }
+		public void ShowNotification(string title, string text, float dismissAfter = -1)
+		{
+			if (coroutine != null) StopCoroutine(coroutine);
+			coroutine = StartCoroutine(ShowNotificationCoroutine(title, text, dismissAfter));
+		}
 
-        private void Hide()
-        {
-            notification.AddToClassList("notification--hidden");
-        }
-    }
+		private IEnumerator ShowNotificationCoroutine(string title, string text, float dismissAfter)
+		{
+			if (IsNotificationShown)
+			{
+				Hide();
+				yield return new WaitForSeconds(0.3f);
+			}
+
+			titleLabel.text = title;
+			textLabel.text = text;
+
+			Show();
+
+			if (dismissAfter >= 0)
+			{
+				yield return new WaitForSeconds(dismissAfter);
+				Hide();
+			}
+		}
+
+		private void Show()
+		{
+			audioSource.clip = clip;
+			audioSource.pitch = 1f;
+			audioSource.PlayDelayed(0.3f);
+			notification.RemoveFromClassList("notification--hidden");
+		}
+
+		private void Hide()
+		{
+			notification.AddToClassList("notification--hidden");
+		}
+	}
 }

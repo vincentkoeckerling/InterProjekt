@@ -22,6 +22,14 @@ public class Water : MonoBehaviour
             particleSystemObj.Play();
         }
     }
+    
+    public void Stop()
+    {
+        foreach (ParticleSystem particleSystemObj in particleSystems)
+        {
+            particleSystemObj.Stop();
+        }
+    }
 }
 
 [CustomEditor(typeof(Water))]

@@ -5,7 +5,11 @@
     "m_Properties": [],
     "m_Keywords": [],
     "m_Dropdowns": [],
-    "m_CategoryData": [],
+    "m_CategoryData": [
+        {
+            "m_Id": "adb9752861504aa0af38df12d07d1e69"
+        }
+    ],
     "m_Nodes": [
         {
             "m_Id": "2d3594c6bf02459c98937ad9e6ddb08b"
@@ -308,6 +312,14 @@
         "b": 0.5,
         "a": 1.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "adb9752861504aa0af38df12d07d1e69",
+    "m_Name": "",
+    "m_ChildObjectList": []
 }
 
 {

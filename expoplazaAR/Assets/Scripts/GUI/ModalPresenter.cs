@@ -5,40 +5,43 @@ using UnityEngine.UIElements;
 
 namespace GUI
 {
-    [RequireComponent(typeof(UIDocument))]
-    public class ModalPresenter : MonoBehaviour
-    {
-        private VisualElement modal;
-        private Label titleLabel;
-        private Label textLabel;
+	[RequireComponent(typeof(UIDocument))]
+	public class ModalPresenter : MonoBehaviour
+	{
+		private VisualElement modal;
+		private Label titleLabel;
+		private Label textLabel;
 
-        private Coroutine coroutine;
+		private Action<bool> callback;
 
-        private void OnEnable()
-        {
-            modal = GetComponent<UIDocument>().rootVisualElement.Q("modal");
-            titleLabel = modal.Q<Label>("title");
-            textLabel = modal.Q<Label>("text");
+		private void OnEnable()
+		{
+			modal = GetComponent<UIDocument>().rootVisualElement.Q("modal");
+			titleLabel = modal.Q<Label>("title");
+			textLabel = modal.Q<Label>("text");
 
-            modal.Query<Button>(className: "button").ForEach(btn => btn.clicked += Hide);
-        }
+			modal.Query<Button>(className: "button").ForEach(btn => btn.clicked += Hide);
+            modal.Q<Button>("yesButton").clicked += () => callback(true);
+            modal.Q<Button>("noButton").clicked += () => callback(false);
+		}
 
-        public void ShowModal(string title, string text)
-        {
-            titleLabel.text = title;
-            textLabel.text = text;
+		public void ShowModal(string title, string text, Action<bool> callback)
+		{
+			titleLabel.text = title;
+			textLabel.text = text;
+			this.callback = callback;
 
-            Show();
-        }
+			Show();
+		}
 
-        private void Show()
-        {
-            modal.RemoveFromClassList("modal--hidden");
-        }
+		private void Show()
+		{
+			modal.RemoveFromClassList("modal--hidden");
+		}
 
-        private void Hide()
-        {
-            modal.AddToClassList("modal--hidden");
-        }
-    }
+		private void Hide()
+		{
+			modal.AddToClassList("modal--hidden");
+		}
+	}
 }

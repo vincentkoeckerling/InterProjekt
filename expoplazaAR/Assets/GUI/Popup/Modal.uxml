@@ -2,9 +2,14 @@
     <Style src="project://database/Assets/GUI/Popup/Popup.uss?fileID=7433441132597879392&amp;guid=7cd2072d3e7e9470d983cb8d07b94010&amp;type=3#Popup" />
     <ui:VisualElement name="modal" class="modal--hidden" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: center; align-items: center;">
         <ui:VisualElement name="VisualElement" class="backdrop" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.65); position: absolute; left: 0; top: 0; right: 0; bottom: 0; transition-property: opacity; transition-duration: 0.15s; transition-timing-function: ease-in;" />
-        <ui:VisualElement name="VisualElement" class="card" style="flex-grow: 0; transition-duration: 0.2s; transition-timing-function: ease-in; transition-delay: 0.1s;">
-            <ui:Label tabindex="-1" text="Titel" display-tooltip-when-elided="true" name="title" class="title" />
-            <ui:Label tabindex="-1" text="Spielst du gerne Videospiele?" display-tooltip-when-elided="true" name="text" />
+        <ui:VisualElement name="VisualElement" class="card" style="flex-grow: 0; transition-duration: 0.2s; transition-timing-function: ease-in; transition-delay: 0.1s; width: 350px;">
+            <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row-reverse; align-items: stretch; margin-bottom: 16px;">
+                <ui:VisualElement name="image" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/GUI/Popup/pixel_art___do_you_fart_fish_by_larkspurbetula_de6iigm.gif?fileID=2800000&amp;guid=6dc96762337404121824ad9698ff75b9&amp;type=3#pixel_art___do_you_fart_fish_by_larkspurbetula_de6iigm&apos;); width: 64px; height: 64px; margin-left: 32px;" />
+                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                    <ui:Label tabindex="-1" text="Titel" display-tooltip-when-elided="true" name="title" class="title" />
+                    <ui:Label tabindex="-1" text="Spielst du gerne Videospiele?" display-tooltip-when-elided="true" name="text" style="white-space: normal;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
             <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: flex-start; justify-content: space-between; margin-top: 16px;">
                 <ui:Button text="Ja" display-tooltip-when-elided="true" name="yesButton" class="button" style="margin-right: 16px;" />
                 <ui:Button text="Nein" display-tooltip-when-elided="true" name="noButton" class="button" />

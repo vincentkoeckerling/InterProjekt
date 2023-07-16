@@ -1,3 +1,4 @@
+using System.Collections;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -7,7 +8,7 @@ namespace GUI
 	public class Step3Presenter : MonoBehaviour
 	{
 		[SerializeField] private UserInfo userInfo;
-		
+
 		private VisualElement step3;
 
 		private TextField firstNameTextField;
@@ -34,15 +35,17 @@ namespace GUI
 
 			button = step3.Q<Button>("button");
 			button.clicked += Submit;
-			
+
 			UpdateState();
 
-			step3.RegisterCallback<InputEvent>((_) => UpdateState());
-			genderDropdownField.RegisterValueChangedCallback((_) => UpdateState());
+			step3.RegisterCallback<InputEvent>((_) => StartCoroutine(UpdateState()));
+			genderDropdownField.RegisterValueChangedCallback((_) => StartCoroutine(UpdateState()));
 		}
 
-		private void UpdateState()
+		private IEnumerator UpdateState()
 		{
+			// Wait for Textfield Value to be updated (only on iPad) idk bug
+			yield return new WaitForEndOfFrame();
 			button.SetEnabled(IsFilledOut());
 		}
 

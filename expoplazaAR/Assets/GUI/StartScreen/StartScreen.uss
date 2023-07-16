@@ -60,6 +60,7 @@
     bottom: 0;
     opacity: 1;
     background-image: url('project://database/Assets/GUI/background.png?fileID=2800000&guid=edbc1a3863d394fcba248e05e5ef07e0&type=3#background');
+    -unity-background-scale-mode: scale-and-crop;
 }
 
 .toggle {
@@ -105,11 +106,20 @@
     -unity-background-image-tint-color: rgb(255, 255, 255);
 }
 
-.unity-foldout .unity-toggle:focus,
-.unity-foldout .unity-toggle:active,
-.unity-foldout .unity-toggle:focus Label,
+.unity-foldout .unity-toggle:focus {
+    color: white;
+}
+
+.unity-foldout .unity-toggle:active {
+    color: white;
+}
+
+.unity-foldout .unity-toggle:focus Label {
+    color: white;
+}
+
 .unity-foldout .unity-toggle:active Label {
-    color: white !important;
+    color: white;
 }
 
 .unity-foldout__checkmark {

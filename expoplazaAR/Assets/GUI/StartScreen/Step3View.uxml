@@ -3,7 +3,7 @@
     <ui:VisualElement picking-mode="Ignore" name="VisualElement" class="root">
         <ui:VisualElement class="container" style="flex-grow: 1;">
             <ui:Label tabindex="-1" text="AR Phishing" display-tooltip-when-elided="true" class="title" />
-            <ui:ScrollView horizontal-scroller-visibility="Hidden" name="ScrollView" style="flex-grow: 1;">
+            <ui:ScrollView horizontal-scroller-visibility="Hidden" name="ScrollView" vertical-scroller-visibility="Hidden" touch-scroll-type="Elastic" style="flex-grow: 1;">
                 <ui:Label tabindex="-1" text="Bevor es losgeht benötigen wir noch ein paar Informationen von dir. Fülle die Felder unten aus um das Spiel zu starten. Diese Informationen helfen uns dein Spielerlebniss zu verbessern und genau auf dich zuzuschneiden." display-tooltip-when-elided="true" class="text" />
                 <ui:VisualElement name="form" style="background-color: rgba(0, 0, 0, 0); margin-top: 28px;">
                     <ui:VisualElement name="VisualElement" class="row">

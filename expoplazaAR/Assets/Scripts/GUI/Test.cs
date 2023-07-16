@@ -21,6 +21,7 @@ namespace GUI
 		}
 	}
 
+#if UNITY_EDITOR
 	[CustomEditor(typeof(Test))]
 	public class TestEditor : Editor
 	{
@@ -39,6 +40,6 @@ namespace GUI
 				test.TestModal();
 			}
 		}
-
 	}
+#endif
 }

@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605f240cac1476349b8418f44b95e097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishIsCatchableForXSeconds: 5
+  fishSpawnTimeRange: {x: 5, y: 30}
   fishPosition: {x: 0, y: 0, z: 0}
 --- !u!82 &8057665718995796239
 AudioSource:

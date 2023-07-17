@@ -18,7 +18,6 @@ public class FishingSpot : MonoBehaviour
 
     private Vector3 GetRandomPositionOnMesh(Mesh mesh1)
     {
-        Debug.Log(mesh1.vertices.Length);
         Vector3 pos = Vector3.zero;
         var randomPointOnMesh = mesh1.vertices[UnityEngine.Random.Range(0, mesh1.vertices.Length)] * 2000;
         pos = randomPointOnMesh;

@@ -34,6 +34,7 @@ public class angelLine : MonoBehaviour
     private GameObject _springer;
     private Transform _springerParent;
     private Vector3 _springerPosition;
+    private FishingGame _fishingGame;
 
     private void Start()
     {
@@ -41,8 +42,11 @@ public class angelLine : MonoBehaviour
         if(_springer == null)
             Debug.LogError("springer not found");
         _springerParent = _springer.transform.parent;
-        _springerPosition = new Vector3(_springer.transform.localPosition.x, _springer.transform.localPosition.y, _springer.transform.localPosition.z);
-        Debug.Log("springer position: " + _springerPosition.x + " " + _springerPosition.y + " " + _springerPosition.z);
+        _springerPosition = _springer.transform.localPosition;
+
+        _fishingGame = GameObject.Find("FishingGame").GetComponent<FishingGame>();
+        if(_fishingGame == null)
+            Debug.LogError("FishingGame not found");
     }
 
     private void Update()
@@ -81,12 +85,24 @@ public class angelLine : MonoBehaviour
     {
         _springer.transform.parent = null;
         _springer.transform.position = position;
+        _fishingGame.fishingRodIsInWater = true;
     }
     
     private void AttachSpringerToFishingRod()
     {
         _springer.transform.parent = _springerParent.transform;
         _springer.transform.localPosition = _springerPosition;
+        _fishingGame.fishingRodIsInWater = false;
+        
+        _fishingGame.fishingRodIsCatching = true;
+        // set _fishingGame.fishingRodIsCatching to false after 0.1 second
+        Invoke(nameof(StopCatching), 0.1f);
+    }
+
+    private void StopCatching()
+    {
+        // you might call it a workaround, i call it a perfectly working solution
+        _fishingGame.fishingRodIsCatching = false;
     }
 
     private void StartThrow()
@@ -96,12 +112,13 @@ public class angelLine : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxLineDistance, whatIsLandable))
         {
             angelPoint = hit.point;
-            PlaceSpringerIntoWorld(angelPoint);
         }
         else
         {
             angelPoint = cam.position + cam.forward * maxLineDistance;
         }
+        
+        PlaceSpringerIntoWorld(angelPoint);
 
         lr.enabled = true;
         lr.SetPosition(0, angelTip.position);

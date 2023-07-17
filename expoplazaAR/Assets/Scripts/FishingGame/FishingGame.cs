@@ -21,6 +21,8 @@ public class FishingGame : MonoBehaviour
     public GameObject fishPosition;
     public GameObject player;
     public float playerNeedsToMoveAwayFromFishingSpot = 1f;
+    public bool fishingRodIsInWater;
+    public bool fishingRodIsCatching;
 
     private void Start()
     {
@@ -63,8 +65,8 @@ public class FishingGame : MonoBehaviour
         
         if (!_fishSpawned) return;
         
-        // check if space bar is pressed
-        if (!Input.GetKeyDown(KeyCode.Space)) return;
+        
+        if (!fishingRodIsCatching) return;
         _fishSpawned = false;
         _fishCounter++;
         
@@ -92,6 +94,17 @@ public class FishingGame : MonoBehaviour
 
     private IEnumerator SpawnFish()
     {
+        if (!fishingRodIsInWater)
+        {
+            Debug.Log("Fishing rod is not in water");
+            
+            // wait 5 seconds
+            yield return new WaitForSeconds(fishIsCatchableForXSeconds);
+            StartCoroutine(SpawnFish());
+
+            yield break;
+        };
+        
         int randomTime = UnityEngine.Random.Range(fishSpawnTimeRange.x, fishSpawnTimeRange.y);
         Debug.Log("Waiting for " + randomTime + " seconds");
         yield return new WaitForSeconds(randomTime);

@@ -32,7 +32,7 @@
                             <ui:TextField picking-mode="Ignore" label="Postleitzahl" name="zipCode" keyboard-type="DecimalPad" class="text-field" />
                         </ui:VisualElement>
                         <ui:VisualElement name="VisualElement" class="col" style="max-width: none;">
-                            <ui:TextField picking-mode="Ignore" label="Stadt" name="city" keyboard-type="DecimalPad" class="text-field" />
+                            <ui:TextField picking-mode="Ignore" label="Stadt" name="city" keyboard-type="Default" class="text-field" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>

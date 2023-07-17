@@ -36,7 +36,7 @@ namespace GUI
 			button = step3.Q<Button>("button");
 			button.clicked += Submit;
 
-			UpdateState();
+			StartCoroutine(UpdateState());
 
 			step3.RegisterCallback<InputEvent>((_) => StartCoroutine(UpdateState()));
 			genderDropdownField.RegisterValueChangedCallback((_) => StartCoroutine(UpdateState()));

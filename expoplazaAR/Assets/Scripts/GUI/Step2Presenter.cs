@@ -30,7 +30,7 @@ namespace GUI
 			button = step2.Q<Button>("button");
 			button.clicked += Submit;
 
-			UpdateState();
+			StartCoroutine(UpdateState());
 
 			step2.RegisterCallback<InputEvent>((_) => StartCoroutine(UpdateState()));
 		}

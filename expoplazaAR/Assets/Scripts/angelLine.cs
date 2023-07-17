@@ -27,7 +27,7 @@ public class angelLine : MonoBehaviour
     public float reelDelay;
 
     private bool throwing;
-    private Coroutine throwCoroutine;
+    private Coroutine _throwCoroutine;
     private bool lineRendered;
     private bool reelDelayStarted;
 
@@ -51,7 +51,7 @@ public class angelLine : MonoBehaviour
         {
             if (!throwing && !lineRendered)
             {
-                throwCoroutine = StartCoroutine(StartThrowWithDelay(angelDelayTime));
+                _throwCoroutine = StartCoroutine(StartThrowWithDelay(angelDelayTime));
             }
         }
 
@@ -93,8 +93,7 @@ public class angelLine : MonoBehaviour
     {
         if (angelCdTimer > 0) return;
 
-        RaycastHit hit;
-        if (Physics.Raycast(cam.position, cam.forward, out hit, maxLineDistance, whatIsLandable))
+        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxLineDistance, whatIsLandable))
         {
             angelPoint = hit.point;
             PlaceSpringerIntoWorld(angelPoint);

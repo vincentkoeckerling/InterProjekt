@@ -663,6 +663,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2857139110350767697, guid: 6ab3734a31611514b9ac98007c054c8a,
+        type: 3}
+      propertyPath: fishSpawnTimeRange.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238327597440304973, guid: 6ab3734a31611514b9ac98007c054c8a,
         type: 3}
       propertyPath: m_Name

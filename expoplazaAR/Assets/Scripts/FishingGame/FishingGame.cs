@@ -23,11 +23,16 @@ public class FishingGame : MonoBehaviour
     public float playerNeedsToMoveAwayFromFishingSpot = 1f;
     public bool fishingRodIsInWater;
     public bool fishingRodIsCatching;
+    public GameObject fish;
+    public bool fishIsCatched;
 
     private void Start()
     {
+        if(fish == null)
+            Debug.LogError("No fish found");
+        fish.SetActive(false);
+        
         waterParticleSystem = GetComponentInChildren<Water>();
-
         if(waterParticleSystem == null)
             Debug.LogError("No water particle system found");
         
@@ -77,6 +82,7 @@ public class FishingGame : MonoBehaviour
         _audioSource.Play();
         
         Debug.Log("You caught a fish!");
+        fishIsCatched = true;
 
         if (_fishCounter == 3)
         {

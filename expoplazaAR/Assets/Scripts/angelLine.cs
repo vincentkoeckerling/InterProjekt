@@ -106,6 +106,22 @@ public class angelLine : MonoBehaviour
         _fishingGame.fishingRodIsCatching = true;
         // set _fishingGame.fishingRodIsCatching to false after 0.1 second
         Invoke(nameof(StopCatching), 0.1f);
+        Invoke(nameof(AttachFishToSpringer), 0.05f);
+    }
+
+    private void AttachFishToSpringer()
+    {
+        if (!_fishingGame.fishIsCatched) return;
+        
+        _fishingGame.fishIsCatched = false;
+        _fishingGame.fish.SetActive(true);
+        
+        Invoke(nameof(FadeOutFish), 5f);
+    }
+    
+    private void FadeOutFish()
+    {
+        _fishingGame.fish.SetActive(false);
     }
 
     private void StopCatching()

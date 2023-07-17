@@ -23,26 +23,30 @@ public class angelLine : MonoBehaviour
 
     [Header("Input")]
     public KeyCode angleKey = KeyCode.Mouse0;
+    public KeyCode reelKey = KeyCode.Mouse1;
+    public float reelDelay;
 
     private bool throwing;
     private Coroutine throwCoroutine;
     private bool lineRendered;
+    private bool reelDelayStarted;
 
     private void Update()
     {
         if (Input.GetKeyDown(angleKey))
         {
-            if (!throwing)
+            if (!throwing && !lineRendered)
             {
                 throwCoroutine = StartCoroutine(StartThrowWithDelay(angelDelayTime));
             }
-            else
+        }
+
+        if (Input.GetKeyDown(reelKey) && lineRendered)
+        {
+            if (!reelDelayStarted)
             {
-                // Repress the mouse click, interrupt the coroutine, and start a new throw
-                StopCoroutine(throwCoroutine);
-                throwing = false;
-                lineRendered = false;
-                lr.enabled = false;
+                reelDelayStarted = true;
+                Invoke(nameof(UnrenderLine), reelDelay);
             }
         }
 
@@ -54,6 +58,7 @@ public class angelLine : MonoBehaviour
 
     private IEnumerator StartThrowWithDelay(float delay)
     {
+        throwing = true;
         yield return new WaitForSeconds(delay);
         StartThrow();
     }
@@ -61,8 +66,6 @@ public class angelLine : MonoBehaviour
     private void StartThrow()
     {
         if (angelCdTimer > 0) return;
-
-        throwing = true;
 
         RaycastHit hit;
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxLineDistance, whatIsLandable))
@@ -78,6 +81,7 @@ public class angelLine : MonoBehaviour
         lr.SetPosition(0, angelTip.position);
         lr.SetPosition(1, angelPoint);
         lineRendered = true;
+        DisableLeftMouseClick();
     }
 
     private void LateUpdate()
@@ -88,12 +92,22 @@ public class angelLine : MonoBehaviour
         }
     }
 
-    private void StopThrow()
+    private void UnrenderLine()
     {
-        throwing = false;
-
-        angelCdTimer = angelCD;
-        lr.enabled = false;
         lineRendered = false;
+        lr.enabled = false;
+        reelDelayStarted = false;
+        EnableLeftMouseClick();
+        throwing = false; // Reset the throwing flag
+    }
+
+    private void DisableLeftMouseClick()
+    {
+        angleKey = KeyCode.None;
+    }
+
+    private void EnableLeftMouseClick()
+    {
+        angleKey = KeyCode.Mouse0;
     }
 }

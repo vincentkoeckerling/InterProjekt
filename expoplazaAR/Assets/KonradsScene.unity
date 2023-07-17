@@ -1262,6 +1262,8 @@ MonoBehaviour:
   angelDelayTime: 0.85
   angelCD: 1
   angleKey: 323
+  reelKey: 324
+  reelDelay: 0
 --- !u!1773428102 &1154041790278148679
 ParentConstraint:
   m_ObjectHideFlags: 0

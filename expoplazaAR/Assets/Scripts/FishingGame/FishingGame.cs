@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using GUI;
+using Helper;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -54,6 +55,8 @@ public class FishingGame : MonoBehaviour
                     "Du hast dich weit genug vom Angelplatz entfernt. Vielleicht kannst du jetzt erneut Fische fangen.");
                 _playerShouldMove = false;
                 _fishCounter = 0;
+                
+                StartCoroutine(CameraHelper.TakePhoto());
             }
         }
         
@@ -76,6 +79,7 @@ public class FishingGame : MonoBehaviour
         if (_fishCounter == 3)
         {
             _playerFishingPosition = player.transform.position;
+            StartCoroutine(CameraHelper.TakePhoto());
         }
         
         if(_fishCounter >= 3)

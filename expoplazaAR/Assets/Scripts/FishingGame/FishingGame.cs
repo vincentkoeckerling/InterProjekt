@@ -102,14 +102,29 @@ public class FishingGame : MonoBehaviour
             StartCoroutine(CameraHelper.TakePhoto());
         }
         
-        if(_fishCounter >= 3)
+        if(_fishCounter == 4)
         {
             _notificationPresenter.ShowNotification("Du hast hier genug Fische gefangen!",
                 "Vielleicht solltest du dir einen neuen Angelplatz suchen.");
             _playerShouldMove = true;
         }
+        
+        if(_fishCounter == 5)
+        {
+            _notificationPresenter.ShowNotification("Hey!",
+                "Vielleicht solltest du dir tatsächlich JETZT einen neuen Angelplatz suchen.");
+            _playerShouldMove = true;
+        }
+        
+        if(_fishCounter == 6)
+        {
+            _notificationPresenter.ShowNotification("HALLO!",
+                "HIER GIBT ES NICHTS MEHR, BITTE GEH WOANDERS HIN.");
+            _playerShouldMove = true;
+            _imageGlitch.enabled = true;
+        }
 
-        if (_fishCounter <= 3) return;
+        if (_fishCounter != 7) return;
         _glitchCube.SetActive(true);
         _imageGlitch.enabled = true;
     }

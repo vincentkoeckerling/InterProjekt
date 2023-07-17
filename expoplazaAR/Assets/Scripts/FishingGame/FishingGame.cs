@@ -13,21 +13,34 @@ public class FishingGame : MonoBehaviour
     private AudioSource _audioSource;
     private int _fishCounter;
     private NotificationPresenter _notificationPresenter;
+    private ModalPresenter _modalPresenter;
     private bool _playerShouldMove;
     private Vector3 _playerFishingPosition;
+    private GameObject _glitchCube;
+    private ImageGlitch _imageGlitch;
 
     public int fishIsCatchableForXSeconds = 5;
     public Vector2Int fishSpawnTimeRange = new(5, 30);
     public GameObject fishPosition;
     public GameObject player;
-    public float playerNeedsToMoveAwayFromFishingSpot = 1f;
+    public float playerNeedsToMoveAwayFromFishingSpot = 4f;
     public bool fishingRodIsInWater;
     public bool fishingRodIsCatching;
+    public GameObject fish;
+    public bool fishIsCatched;
 
     private void Start()
     {
+        if(fish == null)
+            Debug.LogError("No fish found");
+        fish.SetActive(false);
+        
+        _imageGlitch = fish.GetComponentInChildren<ImageGlitch>();
+        if(_imageGlitch == null)
+            Debug.LogError("No image glitch found on fish");
+        _imageGlitch.enabled = false;
+        
         waterParticleSystem = GetComponentInChildren<Water>();
-
         if(waterParticleSystem == null)
             Debug.LogError("No water particle system found");
         
@@ -39,8 +52,17 @@ public class FishingGame : MonoBehaviour
         if(_notificationPresenter == null)
             Debug.LogError("No notification presenter found");
         
+        _modalPresenter = GetComponentInChildren<ModalPresenter>();
+        if(_modalPresenter == null)
+            Debug.LogError("No modal presenter found");
+        
         if(player == null)
             Debug.LogError("No player found");
+        
+        _glitchCube = GameObject.Find("GlitchCube");
+        if(_glitchCube == null)
+            Debug.LogError("No glitch cube found");
+        _glitchCube.SetActive(false);
         
         StartCoroutine(SpawnFish());
     }
@@ -77,19 +99,36 @@ public class FishingGame : MonoBehaviour
         _audioSource.Play();
         
         Debug.Log("You caught a fish!");
+        fishIsCatched = true;
 
-        if (_fishCounter == 3)
+        switch (_fishCounter)
         {
-            _playerFishingPosition = player.transform.position;
-            StartCoroutine(CameraHelper.TakePhoto());
+            case 3:
+                _playerFishingPosition = player.transform.position;
+                StartCoroutine(CameraHelper.TakePhoto());
+                _modalPresenter.ShowModal("Wichtige Frage", "Möchtest du ein Foto von deinen Fischen machen?", null);
+                break;
+            case 4:
+                _notificationPresenter.ShowNotification("Du hast hier genug Fische gefangen!",
+                    "Vielleicht solltest du dir einen neuen Angelplatz suchen.");
+                _playerShouldMove = true;
+                break;
+            case 5:
+                _notificationPresenter.ShowNotification("Hey!",
+                    "Vielleicht solltest du dir tatsächlich JETZT einen neuen Angelplatz suchen.");
+                _playerShouldMove = true;
+                break;
+            case 6:
+                _notificationPresenter.ShowNotification("HALLO!",
+                    "HIER GIBT ES NICHTS MEHR, BITTE GEH WOANDERS HIN.");
+                _playerShouldMove = true;
+                _imageGlitch.enabled = true;
+                break;
         }
-        
-        if(_fishCounter >= 3)
-        {
-            _notificationPresenter.ShowNotification("Du hast hier genug Fische gefangen!",
-                "Vielleicht solltest du dir einen neuen Angelplatz suchen.");
-            _playerShouldMove = true;
-        }
+
+        if (_fishCounter != 7) return;
+        _glitchCube.SetActive(true);
+        _imageGlitch.enabled = true;
     }
 
     private IEnumerator SpawnFish()

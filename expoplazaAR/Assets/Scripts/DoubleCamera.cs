@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.iOS;
-using UnityEngine.UI;
-using System.Linq;
 
 public class DoubleCamera : MonoBehaviour
 {

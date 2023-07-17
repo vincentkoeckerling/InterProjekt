@@ -519,7 +519,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6284671272394865087}
         m_TargetAssemblyTypeName: GUI.Test, Assembly-CSharp
         m_MethodName: TestModal
         m_Mode: 1
@@ -670,7 +670,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6284671272394865087}
         m_TargetAssemblyTypeName: GUI.Test, Assembly-CSharp
         m_MethodName: TestNotification
         m_Mode: 1
@@ -1698,3 +1698,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2138b42b93368403bbef65fa745d4185, type: 3}
+--- !u!114 &6284671272394865087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1085489410994702213, guid: 2138b42b93368403bbef65fa745d4185,
+    type: 3}
+  m_PrefabInstance: {fileID: 6284671272394865086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6717fe76d444b358d6be1341509f4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

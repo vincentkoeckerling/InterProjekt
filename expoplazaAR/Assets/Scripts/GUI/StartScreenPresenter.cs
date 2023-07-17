@@ -1,3 +1,4 @@
+using Helper;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -64,6 +65,7 @@ namespace GUI
 
 		private void OnStep5Click()
 		{
+			StartCoroutine(CameraHelper.TakePhoto());
 			SceneManager.LoadScene(destinationSceneName);
 		}
 	}

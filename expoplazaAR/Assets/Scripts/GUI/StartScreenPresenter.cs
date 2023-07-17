@@ -34,7 +34,7 @@ namespace GUI
 			var button5 = step5.Q<Button>("button");
 			button5.clicked += OnStep5Click;
 			button5.SetEnabled(false);
-		
+
 			step5.Q<Toggle>("toggle").RegisterValueChangedCallback(e => button5.SetEnabled(e.newValue));
 		}
 
@@ -49,19 +49,19 @@ namespace GUI
 			step2.style.display = DisplayStyle.None;
 			step3.style.display = DisplayStyle.Flex;
 		}
-	
+
 		private void OnStep3Click()
 		{
 			step3.style.display = DisplayStyle.None;
 			step4.style.display = DisplayStyle.Flex;
 		}
-	
+
 		private void OnStep4Click()
 		{
 			step4.style.display = DisplayStyle.None;
 			step5.style.display = DisplayStyle.Flex;
 		}
-	
+
 		private void OnStep5Click()
 		{
 			SceneManager.LoadScene(destinationSceneName);

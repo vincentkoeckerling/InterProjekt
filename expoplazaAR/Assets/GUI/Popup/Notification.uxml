@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/GUI/Popup/Popup.uss?fileID=7433441132597879392&amp;guid=7cd2072d3e7e9470d983cb8d07b94010&amp;type=3#Popup" />
+    <ui:VisualElement name="notification" class="notification--hidden notification" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); max-width: 500px; position: absolute; top: 16px; right: 16px; transition-property: translate; transition-duration: 0.3s; transition-timing-function: ease-in;">
+        <ui:VisualElement name="VisualElement" class="card">
+            <ui:Label tabindex="-1" text="Titel" display-tooltip-when-elided="true" name="title" class="title" />
+            <ui:Label tabindex="-1" text="Lorem ajwodj awdj awpjd apwjd pjawdp jawpdj awpjd 0awjd a0wjd 0pawjd a" display-tooltip-when-elided="true" name="text" style="white-space: normal;" />
+            <ui:Button text="OK" display-tooltip-when-elided="true" name="dismissButton" class="button" style="align-self: flex-end; padding-left: 16px; padding-right: 16px; margin-top: 16px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

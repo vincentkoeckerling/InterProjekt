@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StencilMaterial
-  m_Shader: {fileID: 4800000, guid: c630b48e810cc074ca09d806c5759ccf, type: 3}
+  m_Name: stencilMat
+  m_Shader: {fileID: 4800000, guid: c0dfad918bf9bd7459321ebf1590919d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,6 +24,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _StencilID: 1
+    - _index: 1
     m_Colors: []
   m_BuildTextureStacks: []

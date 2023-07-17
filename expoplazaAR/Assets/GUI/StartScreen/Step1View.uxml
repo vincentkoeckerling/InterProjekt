@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/GUI/StartScreen/StartScreen.uss?fileID=7433441132597879392&amp;guid=7da7d290ad23c493e809ff3d1cec8fe5&amp;type=3#StartScreen" />
+    <ui:VisualElement picking-mode="Ignore" name="VisualElement" class="root">
+        <ui:VisualElement name="VisualElement" class="container" style="flex-grow: 1; justify-content: center;">
+            <ui:Label tabindex="-1" text="AR Phishing" display-tooltip-when-elided="true" name="Label" class="title" />
+            <ui:Button text="Loslegen" display-tooltip-when-elided="true" name="button" class="sound" style="font-size: 18px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

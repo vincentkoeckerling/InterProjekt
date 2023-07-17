@@ -31,18 +31,3 @@ public class Water : MonoBehaviour
         }
     }
 }
-
-[CustomEditor(typeof(Water))]
-public class TestEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector();
-
-        Water test = (Water)target;
-        if (GUILayout.Button("Play Water Animation"))
-        {
-            test.Play();
-        }
-    }
-}

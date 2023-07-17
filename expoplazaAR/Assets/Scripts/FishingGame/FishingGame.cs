@@ -18,7 +18,7 @@ public class FishingGame : MonoBehaviour
 
     public int fishIsCatchableForXSeconds = 5;
     public Vector2Int fishSpawnTimeRange = new(5, 30);
-    public Vector3 fishPosition;
+    public GameObject fishPosition;
     public GameObject player;
     public float playerNeedsToMoveAwayFromFishingSpot = 1f;
 
@@ -98,7 +98,7 @@ public class FishingGame : MonoBehaviour
 
         
         // move particle to position
-        waterParticleSystem.transform.position = fishPosition;
+        waterParticleSystem.transform.position = fishPosition.transform.position;
         
         
         // play particle system

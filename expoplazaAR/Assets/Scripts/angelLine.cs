@@ -31,6 +31,20 @@ public class angelLine : MonoBehaviour
     private bool lineRendered;
     private bool reelDelayStarted;
 
+    private GameObject _springer;
+    private Transform _springerParent;
+    private Vector3 _springerPosition;
+
+    private void Start()
+    {
+        _springer = GameObject.Find("springer");
+        if(_springer == null)
+            Debug.LogError("springer not found");
+        _springerParent = _springer.transform.parent;
+        _springerPosition = new Vector3(_springer.transform.localPosition.x, _springer.transform.localPosition.y, _springer.transform.localPosition.z);
+        Debug.Log("springer position: " + _springerPosition.x + " " + _springerPosition.y + " " + _springerPosition.z);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(angleKey))
@@ -63,6 +77,18 @@ public class angelLine : MonoBehaviour
         StartThrow();
     }
 
+    private void PlaceSpringerIntoWorld(Vector3 position)
+    {
+        _springer.transform.parent = null;
+        _springer.transform.position = position;
+    }
+    
+    private void AttachSpringerToFishingRod()
+    {
+        _springer.transform.parent = _springerParent.transform;
+        _springer.transform.localPosition = _springerPosition;
+    }
+
     private void StartThrow()
     {
         if (angelCdTimer > 0) return;
@@ -71,7 +97,7 @@ public class angelLine : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxLineDistance, whatIsLandable))
         {
             angelPoint = hit.point;
-            //TODO: Position des Hitpoints an den Springer übergeben
+            PlaceSpringerIntoWorld(angelPoint);
         }
         else
         {
@@ -100,6 +126,8 @@ public class angelLine : MonoBehaviour
         reelDelayStarted = false;
         EnableLeftMouseClick();
         throwing = false; // Reset the throwing flag
+        
+        AttachSpringerToFishingRod();
     }
 
     private void DisableLeftMouseClick()

@@ -26,7 +26,6 @@ public class FishingGame : MonoBehaviour
         if(_audioSource == null)
             Debug.LogError("No audio source found");
         
-        
         StartCoroutine(SpawnFish());
     }
 

@@ -71,6 +71,7 @@ public class angelLine : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxLineDistance, whatIsLandable))
         {
             angelPoint = hit.point;
+            //TODO: Position des Hitpoints an den Springer übergeben
         }
         else
         {

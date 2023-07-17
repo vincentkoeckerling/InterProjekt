@@ -35,12 +35,18 @@ public class angelLine : MonoBehaviour
     private Transform _springerParent;
     private Vector3 _springerPosition;
     private FishingGame _fishingGame;
+    private Animator _animator;
 
     private void Start()
     {
+        _animator = GetComponent<Animator>();
+        if(_animator == null)
+            Debug.LogError("Animator not found");
+
         _springer = GameObject.Find("springer");
         if(_springer == null)
             Debug.LogError("springer not found");
+        
         _springerParent = _springer.transform.parent;
         _springerPosition = _springer.transform.localPosition;
 
@@ -55,6 +61,7 @@ public class angelLine : MonoBehaviour
         {
             if (!throwing && !lineRendered)
             {
+                _animator.SetTrigger("wurf");
                 _throwCoroutine = StartCoroutine(StartThrowWithDelay(angelDelayTime));
             }
         }
@@ -63,6 +70,8 @@ public class angelLine : MonoBehaviour
         {
             if (!reelDelayStarted)
             {
+                _animator.SetTrigger("catch");
+
                 reelDelayStarted = true;
                 Invoke(nameof(UnrenderLine), reelDelay);
             }

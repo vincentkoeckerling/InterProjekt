@@ -15,12 +15,14 @@ public class FishingGame : MonoBehaviour
     private NotificationPresenter _notificationPresenter;
     private bool _playerShouldMove;
     private Vector3 _playerFishingPosition;
+    private GameObject _glitchCube;
+    private ImageGlitch _imageGlitch;
 
     public int fishIsCatchableForXSeconds = 5;
     public Vector2Int fishSpawnTimeRange = new(5, 30);
     public GameObject fishPosition;
     public GameObject player;
-    public float playerNeedsToMoveAwayFromFishingSpot = 1f;
+    public float playerNeedsToMoveAwayFromFishingSpot = 4f;
     public bool fishingRodIsInWater;
     public bool fishingRodIsCatching;
     public GameObject fish;
@@ -31,6 +33,11 @@ public class FishingGame : MonoBehaviour
         if(fish == null)
             Debug.LogError("No fish found");
         fish.SetActive(false);
+        
+        _imageGlitch = fish.GetComponentInChildren<ImageGlitch>();
+        if(_imageGlitch == null)
+            Debug.LogError("No image glitch found on fish");
+        _imageGlitch.enabled = false;
         
         waterParticleSystem = GetComponentInChildren<Water>();
         if(waterParticleSystem == null)
@@ -46,6 +53,11 @@ public class FishingGame : MonoBehaviour
         
         if(player == null)
             Debug.LogError("No player found");
+        
+        _glitchCube = GameObject.Find("GlitchCube");
+        if(_glitchCube == null)
+            Debug.LogError("No glitch cube found");
+        _glitchCube.SetActive(false);
         
         StartCoroutine(SpawnFish());
     }
@@ -96,6 +108,10 @@ public class FishingGame : MonoBehaviour
                 "Vielleicht solltest du dir einen neuen Angelplatz suchen.");
             _playerShouldMove = true;
         }
+
+        if (_fishCounter <= 3) return;
+        _glitchCube.SetActive(true);
+        _imageGlitch.enabled = true;
     }
 
     private IEnumerator SpawnFish()

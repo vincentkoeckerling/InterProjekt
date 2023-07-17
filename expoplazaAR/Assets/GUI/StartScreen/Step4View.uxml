@@ -4,8 +4,8 @@
         <ui:VisualElement class="container" style="flex-grow: 1;">
             <ui:Label tabindex="-1" text="AR Phishing" display-tooltip-when-elided="true" class="title" />
             <ui:Label tabindex="-1" text="Fast geschaftt! Hast du irgendwelche körperlichen oder psychischen Einschränkungen? Deine Angaben helfen es uns deine Spielerfahrung so reibungslos wie möglich zu gestalten. Diese Daten werden mit höchster Vertraulichkeit behandelt. Deine Privatspähre ist uns wichtig!" display-tooltip-when-elided="true" enable-rich-text="true" name="Label" class="text" style="-unity-font-style: bold;" />
-            <ui:Foldout text="Hier auswählen" focusable="false" name="Foldout" value="true" style="color: rgb(255, 255, 255); font-size: 14px; -unity-font-style: bold; margin-top: 16px;">
-                <ui:ScrollView horizontal-scroller-visibility="Hidden" name="ScrollView">
+            <ui:Foldout text="Hier auswählen" focusable="false" name="Foldout" value="false" style="color: rgb(255, 255, 255); font-size: 14px; -unity-font-style: bold; margin-top: 16px;">
+                <ui:ScrollView horizontal-scroller-visibility="Hidden" name="ScrollView" vertical-scroller-visibility="Hidden">
                     <ui:Toggle name="Toggle" text="Brille" value="false" class="toggle toggle--mb sound" />
                     <ui:Toggle name="Toggle" text="Kontaktlinsen" value="false" class="toggle toggle--mb sound" />
                     <ui:Toggle name="Toggle" text="Kurzsichtig" value="false" class="toggle toggle--mb sound" />

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using GUI;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,10 +11,14 @@ public class FishingGame : MonoBehaviour
     private bool _fishSpawned;
     private AudioSource _audioSource;
     private int _fishCounter;
+    private NotificationPresenter _notificationPresenter;
+    private bool _playerShouldMove;
+    private Vector3 _playerFishingPosition;
 
     public int fishIsCatchableForXSeconds = 5;
     public Vector2Int fishSpawnTimeRange = new(5, 30);
     public Vector3 fishPosition;
+    public GameObject player;
 
     private void Start()
     {
@@ -25,6 +30,10 @@ public class FishingGame : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         if(_audioSource == null)
             Debug.LogError("No audio source found");
+        
+        _notificationPresenter = GetComponentInChildren<NotificationPresenter>();
+        if(_notificationPresenter == null)
+            Debug.LogError("No notification presenter found");
         
         StartCoroutine(SpawnFish());
     }
@@ -46,6 +55,18 @@ public class FishingGame : MonoBehaviour
         _audioSource.Play();
         
         Debug.Log("You caught a fish!");
+
+        if (_fishCounter == 3)
+        {
+            _playerFishingPosition = player.transform.position;
+        }
+        
+        if(_fishCounter >= 3)
+        {
+            _notificationPresenter.ShowNotification("Du hast hier genug Fische gefangen!",
+                "Vielleicht solltest du dir einen neuen Angelplatz suchen.");
+            _playerShouldMove = true;
+        }
     }
 
     private IEnumerator SpawnFish()

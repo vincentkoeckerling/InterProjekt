@@ -19,6 +19,7 @@ public class FishingGame : MonoBehaviour
     public Vector2Int fishSpawnTimeRange = new(5, 30);
     public Vector3 fishPosition;
     public GameObject player;
+    public float playerNeedsToMoveAwayFromFishingSpot = 1f;
 
     private void Start()
     {
@@ -35,12 +36,28 @@ public class FishingGame : MonoBehaviour
         if(_notificationPresenter == null)
             Debug.LogError("No notification presenter found");
         
+        if(player == null)
+            Debug.LogError("No player found");
+        
         StartCoroutine(SpawnFish());
     }
 
 
     private void Update()
     {
+        if (_playerShouldMove)
+        {
+            // check if player has moved from his fishing spot
+            if (Vector3.Distance(_playerFishingPosition, player.transform.position) > playerNeedsToMoveAwayFromFishingSpot)
+            {
+                _notificationPresenter.ShowNotification("Gut gemacht!",
+                    "Du hast dich weit genug vom Angelplatz entfernt. Vielleicht kannst du jetzt erneut Fische fangen.");
+                _playerShouldMove = false;
+                _fishCounter = 0;
+            }
+        }
+        
+        
         if (!_fishSpawned) return;
         
         // check if space bar is pressed

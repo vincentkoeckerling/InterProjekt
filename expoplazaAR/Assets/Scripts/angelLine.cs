@@ -27,9 +27,33 @@ public class angelLine : MonoBehaviour
     public float reelDelay;
 
     private bool throwing;
-    private Coroutine throwCoroutine;
+    private Coroutine _throwCoroutine;
     private bool lineRendered;
     private bool reelDelayStarted;
+
+    private GameObject _springer;
+    private Transform _springerParent;
+    private Vector3 _springerPosition;
+    private FishingGame _fishingGame;
+    private Animator _animator;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+        if(_animator == null)
+            Debug.LogError("Animator not found");
+
+        _springer = GameObject.Find("springer");
+        if(_springer == null)
+            Debug.LogError("springer not found");
+        
+        _springerParent = _springer.transform.parent;
+        _springerPosition = _springer.transform.localPosition;
+
+        _fishingGame = GameObject.Find("FishingGame").GetComponent<FishingGame>();
+        if(_fishingGame == null)
+            Debug.LogError("FishingGame not found");
+    }
 
     private void Update()
     {
@@ -37,7 +61,8 @@ public class angelLine : MonoBehaviour
         {
             if (!throwing && !lineRendered)
             {
-                throwCoroutine = StartCoroutine(StartThrowWithDelay(angelDelayTime));
+                _animator.SetTrigger("wurf");
+                _throwCoroutine = StartCoroutine(StartThrowWithDelay(angelDelayTime));
             }
         }
 
@@ -45,6 +70,8 @@ public class angelLine : MonoBehaviour
         {
             if (!reelDelayStarted)
             {
+                _animator.SetTrigger("catch");
+
                 reelDelayStarted = true;
                 Invoke(nameof(UnrenderLine), reelDelay);
             }
@@ -63,20 +90,44 @@ public class angelLine : MonoBehaviour
         StartThrow();
     }
 
+    private void PlaceSpringerIntoWorld(Vector3 position)
+    {
+        _springer.transform.parent = null;
+        _springer.transform.position = position;
+        _fishingGame.fishingRodIsInWater = true;
+    }
+    
+    private void AttachSpringerToFishingRod()
+    {
+        _springer.transform.parent = _springerParent.transform;
+        _springer.transform.localPosition = _springerPosition;
+        _fishingGame.fishingRodIsInWater = false;
+        
+        _fishingGame.fishingRodIsCatching = true;
+        // set _fishingGame.fishingRodIsCatching to false after 0.1 second
+        Invoke(nameof(StopCatching), 0.1f);
+    }
+
+    private void StopCatching()
+    {
+        // you might call it a workaround, i call it a perfectly working solution
+        _fishingGame.fishingRodIsCatching = false;
+    }
+
     private void StartThrow()
     {
         if (angelCdTimer > 0) return;
 
-        RaycastHit hit;
-        if (Physics.Raycast(cam.position, cam.forward, out hit, maxLineDistance, whatIsLandable))
+        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxLineDistance, whatIsLandable))
         {
             angelPoint = hit.point;
-            //TODO: Position des Hitpoints an den Springer übergeben
         }
         else
         {
             angelPoint = cam.position + cam.forward * maxLineDistance;
         }
+        
+        PlaceSpringerIntoWorld(angelPoint);
 
         lr.enabled = true;
         lr.SetPosition(0, angelTip.position);
@@ -100,6 +151,8 @@ public class angelLine : MonoBehaviour
         reelDelayStarted = false;
         EnableLeftMouseClick();
         throwing = false; // Reset the throwing flag
+        
+        AttachSpringerToFishingRod();
     }
 
     private void DisableLeftMouseClick()

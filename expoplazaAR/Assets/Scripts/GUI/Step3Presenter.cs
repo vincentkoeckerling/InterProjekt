@@ -40,6 +40,20 @@ namespace GUI
 
 			step3.RegisterCallback<InputEvent>((_) => StartCoroutine(UpdateState()));
 			genderDropdownField.RegisterValueChangedCallback((_) => StartCoroutine(UpdateState()));
+
+			genderDropdownField.RegisterValueChangedCallback((_) =>
+			{
+				Debug.Log("dropdown");
+				step3.Query<BaseField<string>>(className: "unity-base-field").ForEach(tf =>
+				{
+					tf.Blur();
+					if (tf is TextField tf2)
+					{
+						if (tf2.touchScreenKeyboard != null)
+							tf2.touchScreenKeyboard.active = false;
+					}
+				});
+			});
 		}
 
 		private IEnumerator UpdateState()

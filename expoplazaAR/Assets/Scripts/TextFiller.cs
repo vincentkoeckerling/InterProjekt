@@ -24,12 +24,12 @@ public class TextFiller : MonoBehaviour
                               $"Email : {userInfo.email} \n" + 
                               $"Password : {userInfo.password}\n" +
                               $"Vorname : {userInfo.firstName}\n" +
-                              $"nachname : {userInfo.lastName}\n" +
+                              $"Nachname : {userInfo.lastName}\n" +
                               $"Geschecht : {userInfo.gender}\n" +
                               $"Geburtsdatum {userInfo.birthday}\n" +
-                              $"Straße:  {userInfo.street}\n" +
-                              $"Zip Code : {userInfo.zipCode}\n"+
-                              $"Stadt: {userInfo.city}";
+                              $"Adresse : {userInfo.street}\n" +
+                              $"{userInfo.zipCode}\n"+
+                              $"{userInfo.city}";
         infoText.text = formatedText;    
     }
 }

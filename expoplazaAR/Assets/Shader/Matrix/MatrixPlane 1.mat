@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MatrixPlane
+  m_Name: MatrixPlane 1
   m_Shader: {fileID: -6465566751694194690, guid: ab4e2be189e104e5480244fcc20f6e52,
     type: 3}
   m_Parent: {fileID: 0}
@@ -118,7 +118,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _rotation: 0
-    - _scale: 0.1
+    - _scale: 0.5
     - _speed: 0.3
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

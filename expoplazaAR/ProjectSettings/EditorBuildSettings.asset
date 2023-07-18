@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Seeee.unity
     guid: 89a50a20f3259d24494c075c09c2bd0d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KonradsScene.unity
     guid: bca4812e786764a4d86057e3bd4213ea
   m_configObjects:

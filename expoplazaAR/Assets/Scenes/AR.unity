@@ -951,6 +951,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0014517758
       objectReference: {fileID: 0}
+    - target: {fileID: 1286755718009898389, guid: 6e4ded8eb066946e1a175223ba0fccae,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 740365274}
+    - target: {fileID: 1286755718009898389, guid: 6e4ded8eb066946e1a175223ba0fccae,
+        type: 3}
+      propertyPath: angelnButton
+      value: 
+      objectReference: {fileID: 605700086}
     - target: {fileID: 1466013289363255188, guid: 6e4ded8eb066946e1a175223ba0fccae,
         type: 3}
       propertyPath: m_LocalPosition.x

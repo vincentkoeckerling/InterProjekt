@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: flex-end; padding-left: 32px; padding-right: 32px; padding-bottom: 32px;">
+        <ui:Button text="Angeln" display-tooltip-when-elided="true" name="button" style="padding-left: 32px; padding-right: 32px;" />
+    </ui:VisualElement>
+</ui:UXML>

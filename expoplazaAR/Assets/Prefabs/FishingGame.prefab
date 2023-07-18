@@ -58,6 +58,10 @@ MonoBehaviour:
   fish: {fileID: 0}
   fishIsCatched: 0
   polaroid: {fileID: 0}
+  fishCatchedSound: {fileID: 8300000, guid: 637be7fc377a35047b562a5bbe06a27e, type: 3}
+  fishingRodInWaterSound: {fileID: 8300000, guid: bf9525b6914983d4c8ef6c4b0e0e9513,
+    type: 3}
+  eatSound: {fileID: 8300000, guid: 67bc5b35f7f0fc049b59ebcb5d5009ef, type: 3}
 --- !u!82 &8057665718995796239
 AudioSource:
   m_ObjectHideFlags: 0

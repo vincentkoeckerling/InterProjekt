@@ -30,6 +30,10 @@ public class FishingGame : MonoBehaviour
     public GameObject fish;
     public bool fishIsCatched;
     public GameObject polaroid;
+    
+    public AudioClip fishCatchedSound;
+    public AudioClip fishingRodInWaterSound;
+    public AudioClip eatSound;
 
     private void Start()
     {
@@ -104,6 +108,8 @@ public class FishingGame : MonoBehaviour
         waterParticleSystem.Stop();
                 
         // play sound
+        _audioSource.Stop();
+        _audioSource.clip = fishCatchedSound;
         _audioSource.Play();
         
         Debug.Log("You caught a fish!");
@@ -178,6 +184,9 @@ public class FishingGame : MonoBehaviour
         
         _fishSpawned = true;
         Debug.Log("Fish spawned");
+        _audioSource.Stop();
+        _audioSource.clip = eatSound;
+        _audioSource.Play();
         
         // wait 5 seconds
         yield return new WaitForSeconds(fishIsCatchableForXSeconds);

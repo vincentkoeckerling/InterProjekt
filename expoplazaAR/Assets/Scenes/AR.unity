@@ -190,7 +190,7 @@ PrefabInstance:
         type: 3}
       propertyPath: fish
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1807394367}
     - target: {fileID: 2857139110350767697, guid: 6ab3734a31611514b9ac98007c054c8a,
         type: 3}
       propertyPath: player
@@ -200,12 +200,12 @@ PrefabInstance:
         type: 3}
       propertyPath: polaroid
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1824894414}
     - target: {fileID: 2857139110350767697, guid: 6ab3734a31611514b9ac98007c054c8a,
         type: 3}
       propertyPath: fishPosition
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1807394367}
     - target: {fileID: 3238327597440304973, guid: 6ab3734a31611514b9ac98007c054c8a,
         type: 3}
       propertyPath: m_Name
@@ -2198,11 +2198,23 @@ PrefabInstance:
       addedObject: {fileID: 1265210661}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdef3b425f5721449aef81a007dd1d3d, type: 3}
+--- !u!1 &1807394367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8701934248299626370, guid: 6e4ded8eb066946e1a175223ba0fccae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1009724308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1812657753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5855245864153204107, guid: fdef3b425f5721449aef81a007dd1d3d,
     type: 3}
   m_PrefabInstance: {fileID: 1795186679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1824894414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3807872752874424188, guid: 6e4ded8eb066946e1a175223ba0fccae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1009724308}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2029939196
 PrefabInstance:

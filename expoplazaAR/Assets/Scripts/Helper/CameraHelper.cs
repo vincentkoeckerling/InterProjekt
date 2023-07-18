@@ -49,10 +49,15 @@ namespace Helper
 			webCamTexture.Stop();
 			yield return new WaitForSeconds(0.1f);
 			Debug.Log(Camera.main.transform.position);
-			var xrorigin = GameObject.FindWithTag("XROrigin").GetComponent<XROrigin>();
-			xrorigin.MoveCameraToWorldLocation(camPos);
-			xrorigin.MatchOriginUpCameraForward(xrorigin.transform.up, camForward);
-			// Camera.main.transform.position = camPos;
+
+			var originGameObject = GameObject.FindWithTag("XROrigin");
+			if (originGameObject != null)
+			{
+				var xrorigin = GameObject.FindWithTag("XROrigin").GetComponent<XROrigin>();
+				xrorigin.MoveCameraToWorldLocation(camPos);
+				xrorigin.MatchOriginUpCameraForward(xrorigin.transform.up, camForward);
+				// Camera.main.transform.position = camPos;
+			}
 		}
 	}
 }

@@ -2496,7 +2496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arSession: {fileID: 2042791084}
   putOnPlane: {fileID: 1812657753}
-  offset: {x: 0, y: 0, z: 5}
+  offset: {x: 0, y: 0, z: 18.75}
 --- !u!114 &1081186522
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1694,6 +1694,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1081186520}
   - component: {fileID: 1081186519}
+  - component: {fileID: 1081186522}
+  - component: {fileID: 1081186521}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -1734,6 +1736,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1081186521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081186518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e795daf0435c47dabea97f39a677b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arSession: {fileID: 2042791084}
+  putOnPlane: {fileID: 1812657753}
+  offset: {x: 0, y: 0, z: 5}
+--- !u!114 &1081186522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081186518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlanePrefab: {fileID: 45270452302223010, guid: 7eac38faa024e4ba080d1f3d941f654c,
+    type: 3}
+  m_DetectionMode: 1
 --- !u!1 &1180541823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,6 +2178,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 361661581707391377, guid: fdef3b425f5721449aef81a007dd1d3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994515557979257275, guid: fdef3b425f5721449aef81a007dd1d3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5855245864153204107, guid: fdef3b425f5721449aef81a007dd1d3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -2213,6 +2255,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdef3b425f5721449aef81a007dd1d3d, type: 3}
+--- !u!4 &1812657753 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5855245864153204107, guid: fdef3b425f5721449aef81a007dd1d3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1795186679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1893070931 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3312961387523717103, guid: ef3886a9667424aedaa5b3b3e1285dbb,

@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Matrix.unity
-    guid: a26cc7442edd04d4abcd2da5e9a4750a
-  - enabled: 0
     path: Assets/Scenes/StartScreen.unity
     guid: ded70661efae94ac99ab31442306b9ef
   - enabled: 0
@@ -17,12 +14,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Gallery.unity
     guid: 04b738385442d0e47977203a3256b024
   - enabled: 0
     path: Assets/Scenes/Seeee.unity
     guid: 89a50a20f3259d24494c075c09c2bd0d
+  - enabled: 1
+    path: Assets/Scenes/KonradsScene.unity
+    guid: bca4812e786764a4d86057e3bd4213ea
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 53fff0f073a08804799dce1f43f86bf1,
       type: 2}

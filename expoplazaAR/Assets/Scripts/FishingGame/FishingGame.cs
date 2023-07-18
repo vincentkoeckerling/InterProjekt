@@ -33,6 +33,8 @@ public class FishingGame : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(CameraHelper.TakePhoto());
+
         if(polaroid == null)
             Debug.LogError("No polaroid found");
         polaroid.SetActive(false);

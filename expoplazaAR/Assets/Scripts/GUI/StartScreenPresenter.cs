@@ -65,7 +65,6 @@ namespace GUI
 
 		private void OnStep5Click()
 		{
-			StartCoroutine(CameraHelper.TakePhoto());
 			SceneManager.LoadScene(destinationSceneName);
 		}
 	}

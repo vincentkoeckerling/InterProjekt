@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 0}
+  imageIndex: 1
   button2: {fileID: 0}
   meshRenderer: {fileID: 326015968}
 --- !u!64 &326015967
@@ -848,6 +849,98 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1001 &1060801390
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1594102126464838700, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_Name
+      value: er
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.4457765
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4457765
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.4457765
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 119.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148133164888442858, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2331087734460829291, guid: a8f069c4107914f8c884c734338f51d2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: a8f069c4107914f8c884c734338f51d2, type: 3}
 --- !u!1 &1305286554
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,6 +1055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 0}
+  imageIndex: 0
   button2: {fileID: 0}
   meshRenderer: {fileID: 1706543634}
 --- !u!64 &1706543633
@@ -1084,6 +1178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 0}
+  imageIndex: 2
   button2: {fileID: 0}
   meshRenderer: {fileID: 1911048015}
 --- !u!64 &1911048014

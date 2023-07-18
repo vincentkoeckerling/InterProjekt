@@ -9,8 +9,9 @@ using Button = UnityEngine.UIElements.Button;
 public class Gallery : MonoBehaviour
 {
     List<string> images = new();
-    int currentImageIndex;
+    int currentImageIndex = -1;
     public RawImage rawImage;
+    public int imageIndex = 0;
     
     public UnityEngine.UI.Button button2;
     
@@ -22,7 +23,11 @@ public class Gallery : MonoBehaviour
         images = loadPngs();
         if(button2 != null)
             button2.onClick.AddListener(showNextImage);
-        showImage();
+
+        for (int i = 0; i <= imageIndex; i++)
+        {
+            showNextImage();
+        }
 
     }
     

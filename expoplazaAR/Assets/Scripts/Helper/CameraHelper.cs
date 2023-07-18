@@ -33,7 +33,10 @@ namespace Helper
             NativeGallery.SaveImageToGallery(bytes, Application.productName + " Captures", filename);
 		
 		
-            string destination = Application.persistentDataPath + filename;
+            DirectoryInfo directoryInfo = Directory.CreateDirectory(Application.persistentDataPath).CreateSubdirectory("ARFishing");
+            string destination = directoryInfo.FullName + filename;
+            Debug.Log("save destination: " + destination); 
+
 
             FileStream file = File.Exists(destination) ? File.OpenWrite(destination) : File.Create(destination);
             file.Write(bytes);

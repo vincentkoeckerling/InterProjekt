@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184c2d7399dc4aeba19423e9f111c52f, type: 3}
   m_Name: UserInfo
   m_EditorClassIdentifier: 
-  username: 
-  email: 
-  password: 
-  firstName: 
-  lastName: 
-  gender: 
-  birthday: 
-  street: 
-  zipCode: 
-  city: 
+  username: hi
+  email: hi
+  password: hi
+  firstName: hi
+  lastName: hi
+  gender: hi
+  birthday: hi
+  street: hi
+  zipCode: hi
+  city: hi
   additionalInfo: []

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7576867131100388943
+--- !u!1 &123983613501277667
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4365528357719543085}
-  - component: {fileID: 7618165371811446966}
+  - component: {fileID: 5174364421770026991}
+  - component: {fileID: 7370325142602571520}
   m_Layer: 31
   m_Name: Atrium Environment
   m_TagString: Untagged
@@ -17,29 +17,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4365528357719543085
+--- !u!4 &5174364421770026991
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7576867131100388943}
+  m_GameObject: {fileID: 123983613501277667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1490664541223379929}
+  - {fileID: 7176857904907813954}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7618165371811446966
+--- !u!114 &7370325142602571520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7576867131100388943}
+  m_GameObject: {fileID: 123983613501277667}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba5a5f182b3f9a14fa153e9bee21a2c4, type: 3}
@@ -105,13 +105,13 @@ MonoBehaviour:
       sh[26]: 0
   m_PostProcessProfile: {fileID: 0}
   m_ExcludeFromSelectionUI: 0
---- !u!1001 &1379613305410061362
+--- !u!1001 &7211366088859280297
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 4365528357719543085}
+    m_TransformParent: {fileID: 5174364421770026991}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0af789aaf6c850146aed454d1cd7a3a8,
         type: 3}
@@ -168,6 +168,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1853094968961178454, guid: 0af789aaf6c850146aed454d1cd7a3a8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 0af789aaf6c850146aed454d1cd7a3a8,
         type: 3}
       propertyPath: m_IsActive
@@ -183,9 +188,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0af789aaf6c850146aed454d1cd7a3a8, type: 3}
---- !u!4 &1490664541223379929 stripped
+--- !u!4 &7176857904907813954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0af789aaf6c850146aed454d1cd7a3a8,
     type: 3}
-  m_PrefabInstance: {fileID: 1379613305410061362}
+  m_PrefabInstance: {fileID: 7211366088859280297}
   m_PrefabAsset: {fileID: 0}

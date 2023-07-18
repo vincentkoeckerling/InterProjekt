@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -50,9 +51,9 @@ public class Gallery : MonoBehaviour
 
     public static List<string> loadPngs()
     {
-        string destination = Application.persistentDataPath;
-        destination = System.IO.Directory.GetParent(destination).FullName;
-        Debug.Log("destination: " + destination); 
+        DirectoryInfo directoryInfo = Directory.CreateDirectory(Application.persistentDataPath);
+        string destination = directoryInfo.FullName;
+        Debug.Log("read destination: " + destination); 
         
         // all pngs
         List<string> images = System.IO.Directory.GetFiles(destination, "*.png").ToList();

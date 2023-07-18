@@ -18,6 +18,7 @@ public class FishingGame : MonoBehaviour
     private Vector3 _playerFishingPosition;
     private GameObject _glitchCube;
     private ImageGlitch _imageGlitch;
+    private bool _endGameActivated;
 
     public int fishIsCatchableForXSeconds = 5;
     public Vector2Int fishSpawnTimeRange = new(5, 30);
@@ -28,9 +29,14 @@ public class FishingGame : MonoBehaviour
     public bool fishingRodIsCatching;
     public GameObject fish;
     public bool fishIsCatched;
+    public GameObject polaroid;
 
     private void Start()
     {
+        if(polaroid == null)
+            Debug.LogError("No polaroid found");
+        polaroid.SetActive(false);
+        
         if(fish == null)
             Debug.LogError("No fish found");
         fish.SetActive(false);
@@ -70,7 +76,7 @@ public class FishingGame : MonoBehaviour
 
     private void Update()
     {
-        if (_playerShouldMove)
+        if (!_endGameActivated && _playerShouldMove)
         {
             // check if player has moved from his fishing spot
             if (Vector3.Distance(_playerFishingPosition, player.transform.position) > playerNeedsToMoveAwayFromFishingSpot)
@@ -127,8 +133,19 @@ public class FishingGame : MonoBehaviour
         }
 
         if (_fishCounter != 7) return;
+        fish.SetActive(false);
+        polaroid.SetActive(true);
         _glitchCube.SetActive(true);
-        _imageGlitch.enabled = true;
+
+        _endGameActivated = true;
+        
+        // call hidePolaroid after 5 seconds
+        Invoke(nameof(HidePolaroid), 5f);
+    }
+
+    private void HidePolaroid()
+    {
+        polaroid.SetActive(false);
     }
 
     private IEnumerator SpawnFish()

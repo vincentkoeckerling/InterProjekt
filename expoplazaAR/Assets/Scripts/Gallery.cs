@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,8 +9,9 @@ using Button = UnityEngine.UIElements.Button;
 public class Gallery : MonoBehaviour
 {
     List<string> images = new();
-    int currentImageIndex;
+    int currentImageIndex = -1;
     public RawImage rawImage;
+    public int imageIndex = 0;
     
     public UnityEngine.UI.Button button2;
     
@@ -21,7 +23,11 @@ public class Gallery : MonoBehaviour
         images = loadPngs();
         if(button2 != null)
             button2.onClick.AddListener(showNextImage);
-        showImage();
+
+        for (int i = 0; i <= imageIndex; i++)
+        {
+            showNextImage();
+        }
 
     }
     
@@ -50,9 +56,9 @@ public class Gallery : MonoBehaviour
 
     public static List<string> loadPngs()
     {
-        string destination = Application.persistentDataPath;
-        destination = System.IO.Directory.GetParent(destination).FullName;
-        Debug.Log("destination: " + destination); 
+        DirectoryInfo directoryInfo = Directory.CreateDirectory(Application.persistentDataPath);
+        string destination = directoryInfo.FullName;
+        Debug.Log("read destination: " + destination); 
         
         // all pngs
         List<string> images = System.IO.Directory.GetFiles(destination, "*.png").ToList();

@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections;
 using UnityEditor;
+using Helper;
 
 namespace GUI
 {
@@ -18,6 +19,11 @@ namespace GUI
 		public void TestModal()
 		{
 			modalPresenter.ShowModal("Kurze Frage", "Spielst du gerne Videospiele?", (b) => Debug.Log(b));
+		}
+
+		public void TestPhoto()
+		{
+			StartCoroutine(CameraHelper.TakePhoto());
 		}
 	}
 
@@ -38,6 +44,11 @@ namespace GUI
 			if (GUILayout.Button("Test Modal"))
 			{
 				test.TestModal();
+			}
+
+			if (GUILayout.Button("Test Photo"))
+			{
+				test.TestPhoto();
 			}
 		}
 	}

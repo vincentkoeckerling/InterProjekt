@@ -53,8 +53,8 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -1878332245247344467}
   - {fileID: 8240118942978786797}
-  - {fileID: 5449712543867250806}
-  m_RendererFeatureMap: adc0de57c6d2eee5edc5374785c85a7276a83251af44a14b
+  - {fileID: 581405164166350252}
+  m_RendererFeatureMap: adc0de57c6d2eee5edc5374785c85a72ac85b698ea901108
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
---- !u!114 &5449712543867250806
+--- !u!114 &581405164166350252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

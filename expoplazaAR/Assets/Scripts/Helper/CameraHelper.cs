@@ -4,28 +4,28 @@ using UnityEngine;
 
 namespace Helper
 {
-    public class CameraHelper
-    {
-        
-        private static string GetFrontCamName()
-        {
-            foreach(WebCamDevice camDevice in WebCamTexture.devices)
-                if (camDevice.isFrontFacing)
-                    return camDevice.name;
+	public class CameraHelper
+	{
 
-            return "";
-        }
-        
-        public static IEnumerator TakePhoto()  // Start this Coroutine on some button click
-        {
-            WebCamTexture webCamTexture = new(GetFrontCamName());
+		private static string GetFrontCamName()
+		{
+			foreach (WebCamDevice camDevice in WebCamTexture.devices)
+				if (camDevice.isFrontFacing)
+					return camDevice.name;
 
-            webCamTexture.Play();
-            yield return new WaitForSeconds(5);
+			return "";
+		}
 
-            Texture2D photo = new(webCamTexture.width, webCamTexture.height);
-            photo.SetPixels(webCamTexture.GetPixels());
-            photo.Apply();
+		public static IEnumerator TakePhoto()  // Start this Coroutine on some button click
+		{
+			WebCamTexture webCamTexture = new(GetFrontCamName());
+
+			webCamTexture.Play();
+			yield return new WaitForSeconds(5);
+
+			Texture2D photo = new(webCamTexture.width, webCamTexture.height, TextureFormat.ARGB32, false);
+			photo.SetPixels(webCamTexture.GetPixels());
+			photo.Apply();
 
             byte[] bytes = photo.EncodeToPNG();
             string filename =
@@ -33,13 +33,16 @@ namespace Helper
             NativeGallery.SaveImageToGallery(bytes, Application.productName + " Captures", filename);
 		
 		
-            string destination = Application.persistentDataPath + filename;
+            DirectoryInfo directoryInfo = Directory.CreateDirectory(Application.persistentDataPath).CreateSubdirectory("ARFishing");
+            string destination = directoryInfo.FullName + filename;
+            Debug.Log("save destination: " + destination); 
 
-            FileStream file = File.Exists(destination) ? File.OpenWrite(destination) : File.Create(destination);
-            file.Write(bytes);
-            file.Close();
-		
-            webCamTexture.Stop();
-        }
-    }
+
+			FileStream file = File.Exists(destination) ? File.OpenWrite(destination) : File.Create(destination);
+			file.Write(bytes);
+			file.Close();
+
+			webCamTexture.Stop();
+		}
+	}
 }

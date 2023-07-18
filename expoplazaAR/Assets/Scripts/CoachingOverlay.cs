@@ -25,6 +25,7 @@ public class CoachingOverlay : MonoBehaviour
 
 	private void OnEnable()
 	{
+		Debug.Log("---------------------------Enable--------------------_!!!!!!!!!");
 		if (alreadyPlaced) return;
 		alreadyPlaced = true;
 

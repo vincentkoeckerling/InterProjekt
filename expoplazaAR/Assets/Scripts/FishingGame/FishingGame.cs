@@ -28,9 +28,14 @@ public class FishingGame : MonoBehaviour
     public bool fishingRodIsCatching;
     public GameObject fish;
     public bool fishIsCatched;
+    public GameObject polaroid;
 
     private void Start()
     {
+        if(polaroid == null)
+            Debug.LogError("No polaroid found");
+        polaroid.SetActive(false);
+        
         if(fish == null)
             Debug.LogError("No fish found");
         fish.SetActive(false);
@@ -127,8 +132,9 @@ public class FishingGame : MonoBehaviour
         }
 
         if (_fishCounter != 7) return;
+        fish.SetActive(false);
+        polaroid.SetActive(true);
         _glitchCube.SetActive(true);
-        _imageGlitch.enabled = true;
     }
 
     private IEnumerator SpawnFish()

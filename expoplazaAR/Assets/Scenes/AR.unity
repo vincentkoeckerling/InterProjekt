@@ -524,6 +524,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 740365273}
+    - target: {fileID: 466382720602352278, guid: 8cab1ed2bb8334bcdb3016bbc88c3655,
+        type: 3}
+      propertyPath: sceneName
+      value: Matrix
+      objectReference: {fileID: 0}
     - target: {fileID: 3794232119742633885, guid: 8cab1ed2bb8334bcdb3016bbc88c3655,
         type: 3}
       propertyPath: m_RootOrder
@@ -2895,6 +2900,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 740365273}
+    - target: {fileID: 466382720602352278, guid: 8cab1ed2bb8334bcdb3016bbc88c3655,
+        type: 3}
+      propertyPath: sceneName
+      value: Matrix
+      objectReference: {fileID: 0}
     - target: {fileID: 3794232119742633885, guid: 8cab1ed2bb8334bcdb3016bbc88c3655,
         type: 3}
       propertyPath: m_RootOrder

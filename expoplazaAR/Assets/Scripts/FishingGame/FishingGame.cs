@@ -135,6 +135,14 @@ public class FishingGame : MonoBehaviour
         fish.SetActive(false);
         polaroid.SetActive(true);
         _glitchCube.SetActive(true);
+        
+        // call hidePolaroid after 5 seconds
+        Invoke(nameof(HidePolaroid), 5f);
+    }
+
+    private void HidePolaroid()
+    {
+        polaroid.SetActive(false);
     }
 
     private IEnumerator SpawnFish()

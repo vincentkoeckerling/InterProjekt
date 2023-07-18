@@ -49,8 +49,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishIsCatchableForXSeconds: 5
-  fishSpawnTimeRange: {x: 5, y: 30}
-  fishPosition: {x: 0, y: 0, z: 0}
+  fishSpawnTimeRange: {x: 5, y: 8}
+  fishPosition: {fileID: 0}
+  player: {fileID: 0}
+  playerNeedsToMoveAwayFromFishingSpot: 4
+  fishingRodIsInWater: 0
+  fishingRodIsCatching: 0
+  fish: {fileID: 0}
+  fishIsCatched: 0
+  polaroid: {fileID: 0}
 --- !u!82 &8057665718995796239
 AudioSource:
   m_ObjectHideFlags: 0

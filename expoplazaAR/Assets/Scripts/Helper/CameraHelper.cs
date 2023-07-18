@@ -23,7 +23,7 @@ namespace Helper
 			webCamTexture.Play();
 			yield return new WaitForSeconds(5);
 
-			Texture2D photo = new(webCamTexture.width, webCamTexture.height);
+			Texture2D photo = new(webCamTexture.width, webCamTexture.height, TextureFormat.ARGB32, false);
 			photo.SetPixels(webCamTexture.GetPixels());
 			photo.Apply();
 
